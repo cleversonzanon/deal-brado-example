@@ -1,0 +1,76 @@
+<form fxLayout="column"
+      autocomplete="off"
+      (ngSubmit)="submitParametros()"
+      [formGroup]="inatividadeForm"
+      class="tempo-inatividade-container">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <span>
+    {{'admin-modulos.parametrizacoes.tempo-inatividade.tempo-sesao' | translate}}
+  </span>
+
+  <div fxLayout="row"
+       class="row-slider"
+       fxLayoutAlign="center center"
+       fxFill>
+    <span fxFlex="5"
+          class="label-slider">
+      5 min
+    </span>
+    <mat-slider [max]="200"
+                color="primary"
+                formControlName="minutesInactive"
+                fxFlex="90"
+                [min]="5"
+                [step]="1"
+                [thumbLabel]="true"
+                [(ngModel)]="minutos">
+    </mat-slider>
+    <span fxFlex="5"
+          class="label-slider">
+      200 min
+    </span>
+  </div>
+
+  <span>
+    {{'admin-modulos.parametrizacoes.tempo-inatividade.dias-sem-acesso' | translate}}
+  </span>
+
+  <div fxLayout="row"
+       class="row-slider"
+       fxLayoutAlign="center center"
+       fxFill>
+    <span fxFlex="5"
+          class="label-slider">
+      10 dia
+    </span>
+    <mat-slider [max]="100"
+                formControlName="daysInactive"
+                fxFlex="90"
+                [min]="10"
+                [step]="1"
+                [thumbLabel]="true"
+                [(ngModel)]="dias">
+    </mat-slider>
+    <span fxFlex="5"
+          class="label-slider">
+      100 dias
+    </span>
+  </div>
+
+  <div fxLayout="row"
+       fxLayoutAlign="end">
+
+    <button mat-raised-button
+            type="submit"
+            color="accent">
+      <mat-icon>
+        save
+      </mat-icon>
+      <strong>
+        {{'admin-modulos.parametrizacoes.tempo-inatividade.btn-salvar' | translate}}
+      </strong>
+    </button>
+  </div>
+</form>

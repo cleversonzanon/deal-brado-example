@@ -1,0 +1,144 @@
+@import '~@angular/material/theming';
+@import '../../../styles';
+
+$media-width: 1000px;
+
+.img-top {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+}
+
+.body-nova-senha {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: url("../../../assets/background-imagens/nova-senha/nova-senha-inferior.jpg") no-repeat bottom left;
+  background-size: 100%;
+}
+
+.nova-senha-container {
+  z-index: 10;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 28px 0 rgba(185, 185, 185, 0.50);
+  border-radius: 8px;
+
+  @media (min-width: 1400px) {
+    margin-bottom: 75px;
+  }
+}
+
+.nova-senha-titulo {
+  margin-bottom: 30px !important;
+  text-align: center;
+  color: $brd-primary-color;
+}
+
+.nova-senha-subtitulo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nova-senha-modal-container {
+  display: flex;
+  padding: 26px 26px 26px 0;
+
+  @media (min-width: $media-width) {
+    width: 950px;
+  }
+}
+
+.nova-senha-form {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+}
+
+.nova-senha-row-button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.nova-senha-button-submit {
+  width: 180px;
+}
+
+.container-inputs {
+  @media (min-width: $media-width) {
+    flex: 6
+  }
+}
+
+.requisitos-container {
+  background-color: #fafafa;
+
+  @media (min-width: $media-width) {
+    flex: 4;
+  }
+}
+
+.requisito-color-default {
+  color: #979797;
+}
+
+.requisito-atendido-color {
+  color: $brd-secondary-color;
+}
+
+.nova-senha-requisito {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.nova-senha-sucesso-container {
+  width: 700px;
+}
+
+.nova-senha-sucesso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px;
+}
+
+.requisito-feedback-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.fundo-icone {
+  width: 78px;
+  height: 78px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 0) and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.fundo-icone-warn {
+  background-color: mat-color($app-palette-warn);
+}
+
+.fundo-icone-success {
+  background-color: $brd-secondary-color;
+}
+
+.requisito-feedback-texto {
+  margin: 0 0 0 10px;
+}
+
+.icone-grande {
+  height: 48px;
+  width: 48px;
+  font-size: 48px;
+}

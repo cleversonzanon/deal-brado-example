@@ -1,0 +1,28 @@
+<div class="border-erro-perfil"
+     fxLayout="row"
+     fxLayoutAlign="center center">
+
+  <img src="../../../../assets/imagens/Robocomerro.png"
+       class="img-erro">
+
+  <div fxLayout="column"
+       fxLayoutAlign="none start"
+       class="msg-container">
+
+    <span class="mat-h1 message-erro">
+      {{'admin-modulos.perfis.perfil-erro.msg' | translate}}
+    </span>
+
+    <button mat-stroked-button
+            class="btn-voltar"
+            color="primary"
+            (click)="onClickVoltar($event)">
+      <mat-icon>
+        keyboard_arrow_left
+      </mat-icon>
+      <strong>
+        {{'admin-modulos.perfis.perfil-erro.btn-voltar' | translate}}
+      </strong>
+    </button>
+  </div>
+</div>

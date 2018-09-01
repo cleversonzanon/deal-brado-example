@@ -1,0 +1,413 @@
+<!-- Header -->
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO">
+</app-modal-header>
+
+<!-- Conteudo -->
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <!-- CONTEUDO DA MODAL-->
+  <div fxFill
+       fxLayout="row">
+
+    <!-- CONTEUDO LADO ESQUERDO (Detalhe) -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <div fxFlex="25"
+         fxLayout="column"
+         style="margin-right: 24px;"
+         fxLayoutAlign="start center">
+
+      <button mat-stroked-button
+              color="accent"
+              (click)="onClickVoltar()">
+        <mat-icon>
+          keyboard_arrow_left
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.usuarios.listagem.btn-voltar' | translate}}
+        </strong>
+      </button>
+
+      <!-- Item informativo -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div *ngIf="!usuarioSelecionado"
+           class="left-container-informativo"
+           fxLayout="column"
+           fxLayoutAlign="start center">
+
+        <img src="../../../../assets/background-imagens/usuario/lupa.png">
+
+        <strong class="label-informativo">
+          {{'admin-modulos.usuarios.listagem.label-informativo' | translate}}
+        </strong>
+      </div>
+
+      <!-- Detalhe do usuario SELECIONADO -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div *ngIf="usuarioSelecionado"
+           class="container-usuario-selecionado">
+
+        <div fxLayout="column"
+             fxLayoutAlign="center center">
+          <!-- IMAGEM DO USUARIO -->
+          <!-- @TODO Backend deve retornar a imagem ou a url da imagem (informacao ainda nao existe)-->
+
+          <!-- EFEITO IMG DAS INICIAIS DO USUARIO @TODO pegar inciais do nome-->
+          <div class="img-usuarios-iniciais">
+            {{usuarioSelecionado.name | initials}}
+          </div>
+
+          <!-- NOME -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.nome' | translate}}
+            </span>
+            <strong class="text-center detalhe-usuario-valor">
+              {{usuarioSelecionado.name}}
+            </strong>
+          </div>
+
+          <!-- LOGIN -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.login' | translate}}
+            </span>
+            <strong class="text-center detalhe-usuario-valor">
+              {{usuarioSelecionado.email}}
+            </strong>
+          </div>
+
+          <!-- TIPO DE USUARIO -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.tipo-usuario' | translate}}
+            </span>
+            <div>
+              <strong class="text-center detalhe-usuario-valor tipo-usuario-label"
+                      *ngFor="let tipo of usuarioSelecionado.userTypeList">
+                {{TipoUsuario[tipo] | translate}}
+              </strong>
+            </div>
+          </div>
+
+          <!-- TERMINAL -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.terminal' | translate}}
+            </span>
+            <strong class="text-center detalhe-usuario-valor"
+                    *ngIf="usuarioSelecionado.terminals; else todos">
+              {{usuarioSelecionado.terminals}}
+            </strong>
+          </div>
+
+          <!-- CLIENTES -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.cliente' | translate}}
+            </span>
+            <strong class="text-center detalhe-usuario-valor"
+                    *ngIf="usuarioSelecionado.company; else todos">
+              {{usuarioSelecionado.company}}
+            </strong>
+          </div>
+
+          <!-- PERFIL -->
+          <div fxLayout="column"
+               fxLayoutAlign="center center">
+            <span class="detalhe-usuario-titulo">
+              {{'admin-modulos.usuarios.listagem.detalhe.perfil' | translate}}
+            </span>
+            <strong class="text-center detalhe-usuario-valor">
+              {{usuarioSelecionado.profileName}}
+            </strong>
+          </div>
+
+          <!-- Data de criacao -->
+          <span class="text-center detalhe-usuario-data">
+            {{'admin-modulos.usuarios.listagem.detalhe.data-criacao' | translate: {dataInicio: (usuarioSelecionado.createdAt | date: 'shortDate') } }}
+          </span>
+
+          <!-- Data de criacao e ultima alteracao -->
+        </div>
+
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <div class="row-btns-usuario">
+
+          <!-- Botoes com acoes do usuario -->
+          <div fxLayout="row"
+               fxFill
+               fxLayoutAlign="space-evenly center">
+
+            <!-- BTN INATIVAR -->
+            <div fxLayout="column"
+                 fxLayoutAlign="center center"
+                 *ngIf="usuarioSelecionado.active">
+
+              <button mat-mini-fab
+                      (click)="onClickAlterarStatusUsuario()"
+                      type="button"
+                      color="warn">
+                <mat-icon>close</mat-icon>
+              </button>
+              <span class="text-center text-usuario-excluir">
+                {{'admin-modulos.usuarios.listagem.detalhe.btn-inativar' | translate}}
+              </span>
+            </div>
+
+            <!-- BTN ATIVAR -->
+            <div fxLayout="column"
+                 fxLayoutAlign="center center"
+                 *ngIf="!usuarioSelecionado.active">
+
+              <button mat-mini-fab
+                      (click)="onClickAlterarStatusUsuario()"
+                      type="button"
+                      color="accent">
+                <mat-icon>check</mat-icon>
+              </button>
+              <span class="text-center text-usuario-editar">
+                {{'admin-modulos.usuarios.listagem.detalhe.btn-ativar' | translate}}
+              </span>
+            </div>
+
+
+            <!-- BTN EDITAR -->
+            <div fxLayout="column"
+                 fxLayoutAlign="center center">
+              <button mat-mini-fab
+                      (click)="onClickEditarUsuario()"
+                      type="button"
+                      color="accent">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <span class="text-center text-usuario-editar">
+                {{'admin-modulos.usuarios.listagem.detalhe.btn-editar' | translate}}
+              </span>
+            </div>
+
+            <!-- BTN RESETAR SENHA -->
+            <div fxLayout="column"
+                 class="secondary-theme"
+                 fxLayoutAlign="center center">
+              <button mat-mini-fab
+                      (click)="onClickResetarSenhaUsuario()"
+                      type="button"
+                      color="primary">
+                <mat-icon>lock_outline</mat-icon>
+              </button>
+              <span class="text-center text-usuario-resetar">
+                {{'admin-modulos.usuarios.listagem.detalhe.btn-resetar' | translate}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LABEL de TODOS -->
+    <ng-template #todos>
+      <strong class="text-center detalhe-usuario-valor">
+        {{'admin-modulos.usuarios.listagem.detalhe.todos' | translate}}
+      </strong>
+    </ng-template>
+
+    <!-- CONTEUDO LADO DIREITO (TABELA) -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <div fxFlex="75"
+         class="right-container">
+
+      <div fxLayout="row"
+           class="secondary-theme"
+           *ngIf="filtrosAtivos"
+           fxLayoutAlign="start center">
+
+        <span
+          class="label-total-filtros-usuarios"
+          [innerHTML]="'admin-modulos.usuarios.listagem.filtros.informativo' | translate:{total: totalFiltrosAtivos()}">
+        </span>
+
+        <!-- Filtros -->
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <mat-chip-list>
+          <!-- FILTRO DE NOME -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.nome"
+                    [matTooltip]="filtrosAtivos.nome"
+                    (removed)="onClickRemoverFiltro('nome')"
+                    selected>
+            {{filtrosAtivos.nome | ellipsis:12}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE PERFIS -->
+          <mat-chip color="primary"
+                    *ngFor="let perfil of filtrosAtivos?.perfilAutorizacao; let position = index;"
+                    [matTooltip]="perfil.name"
+                    (removed)="onClickRemoverFiltroDeLista('perfilAutorizacao', position)"
+                    selected>
+            {{perfil.name | ellipsis:12}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE TIPOS DE USUARIO -->
+          <mat-chip color="primary"
+                    *ngFor="let tipo of filtrosAtivos?.tipoUsuario; let position = index;"
+                    [matTooltip]="TipoUsuario[tipo] | translate"
+                    (removed)="onClickRemoverFiltroDeLista('tipoUsuario', position)"
+                    selected>
+            {{(TipoUsuario[tipo] | translate) | ellipsis:12}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE TERMINAIS -->
+          <mat-chip color="primary"
+                    *ngFor="let terminal of filtrosAtivos?.terminais; let position = index;"
+                    [matTooltip]="terminal.description"
+                    (removed)="onClickRemoverFiltroDeLista('terminais', position)"
+                    selected>
+            {{terminal.description | ellipsis:12}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE ATIVOS -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.ativo === true"
+                    [matTooltip]="'admin-modulos.usuarios.listagem.filtros.ativo' | translate"
+                    (removed)="onClickRemoverFiltro('ativo')"
+                    selected>
+            {{'admin-modulos.usuarios.listagem.filtros.ativo' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE INATIVOS -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.ativo === false"
+                    [matTooltip]="'admin-modulos.usuarios.listagem.filtros.inativos' | translate"
+                    (removed)="onClickRemoverFiltro('ativo')"
+                    selected>
+            {{'admin-modulos.usuarios.listagem.filtros.inativos' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE UNIDADES DE SERVICO -->
+          <mat-chip color="primary"
+                    *ngFor="let unidades of filtrosAtivos?.unidadeDeServico; let position = index;"
+                    [matTooltip]="unidades.description"
+                    (removed)="onClickRemoverFiltroDeLista('unidadeDeServico', position)"
+                    selected>
+            {{unidades.description | ellipsis:12}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- REMOVER FILTROS -->
+          <mat-chip color="accent"
+                    *ngIf="filtrosAtivos"
+                    [matTooltip]="'admin-modulos.usuarios.listagem.filtros.resetar' | translate"
+                    (removed)="onClickResetarFiltros()"
+                    selected>
+            {{'admin-modulos.usuarios.listagem.filtros.resetar' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+        </mat-chip-list>
+
+      </div>
+
+      <!-- TABELA COM A LISTAGEM -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div class="container-lista"
+           #scrollTable
+           (scroll)="onTableScroll($event)">
+
+        <table mat-table
+               fxFill
+               [dataSource]="listaPaginada?.content">
+
+          <!-- COLUNA ATIVO -->
+          <ng-container matColumnDef="ativo">
+            <th mat-header-cell
+                *matHeaderCellDef>
+            </th>
+            <td mat-cell
+                *matCellDef="let element">
+              <div class="inf-usuario-status"
+                   [class.inf-usuario-status-ativo]="element.active">
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- COLUNA NOME -->
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell
+                *matHeaderCellDef>
+              <strong>
+                {{'admin-modulos.usuarios.listagem.table.nome' | translate}}
+              </strong>
+            </th>
+            <td mat-cell
+                class="span-max-dot"
+                *matCellDef="let element">
+              <span class="label-table">
+                {{element.name}}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- COLUNA EMPRESA-->
+          <ng-container matColumnDef="empresa">
+            <th mat-header-cell
+                *matHeaderCellDef>
+              <strong>
+                {{'admin-modulos.usuarios.listagem.table.empresa' | translate}}
+              </strong>
+            </th>
+            <td mat-cell
+                class="span-max-dot"
+                *matCellDef="let element">
+              <span class="label-table">
+                {{element.company ? (element.company | ellipsis:30) : ('admin-modulos.usuarios.listagem.table.todos' | translate)}}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- COLUNA PERFIL -->
+          <ng-container matColumnDef="perfil">
+            <th mat-header-cell
+                *matHeaderCellDef>
+              <strong>
+                {{'admin-modulos.usuarios.listagem.table.perfil' | translate}}
+              </strong>
+            </th>
+            <td mat-cell
+                class="span-max-dot"
+                *matCellDef="let element">
+              <span class="label-table">
+                {{element.profileName | ellipsis:18}}
+              </span>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row
+              *matHeaderRowDef="colunasDaTabela; sticky: true">
+          </tr>
+          <tr mat-row
+              *matRowDef="let usuairo; columns: colunasDaTabela;"
+              (click)="onClickSelecionarUsuario(usuairo)">
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

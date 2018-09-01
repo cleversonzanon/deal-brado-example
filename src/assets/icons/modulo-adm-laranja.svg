@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-adm laranja@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Menu-de-Módulos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-adm-laranja" transform="translate(2.000000, 2.000000)" stroke="#F37721" stroke-width="3">
+            <path d="M31.75,73 L39.625,73 L45.75,65.8738095 L45.75,34.5880952 C54.5,32.502381 58,25.3761905 58,17.3809524 C58,7.64761905 50.3,0 40.5,0 C30.7,0 23,7.64761905 23,17.3809524 C23,23.8119048 25.8,29.7214286 31.75,32.85 L31.75,39.9761905 L35.25,43.452381 L35.25,46.9285714 L31.75,50.4047619 L31.75,55.6190476 L35.25,59.0952381 L35.25,62.5714286 L31.75,66.047619 L31.75,73 Z" id="Shape"></path>
+            <circle id="Oval" cx="40.5" cy="12.5" r="5.5"></circle>
+            <polyline id="Shape" points="11 35 15.93 35 22.9 46 28 46"></polyline>
+            <path d="M11,54 L28,54" id="Shape"></path>
+            <circle id="Oval" cx="5.5" cy="34.5" r="5.5"></circle>
+            <polyline id="Shape" points="11 74 15.93 74 22.73 63 28 63"></polyline>
+            <circle id="Oval" cx="5.5" cy="72.5" r="5.5"></circle>
+            <circle id="Oval" cx="5.5" cy="54.5" r="5.5"></circle>
+            <polyline id="Shape" points="68 35 61.2636364 35 54.1818182 46 49 46"></polyline>
+            <path d="M68,54 L49,54" id="Shape"></path>
+            <circle id="Oval" cx="72.5" cy="34.5" r="5.5"></circle>
+            <polyline id="Shape" points="68 74 61.2636364 74 54.3545455 63 49 63"></polyline>
+            <circle id="Oval" cx="72.5" cy="72.5" r="5.5"></circle>
+            <circle id="Oval" cx="72.5" cy="54.5" r="5.5"></circle>
+        </g>
+    </g>
+</svg>

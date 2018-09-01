@@ -1,0 +1,42 @@
+@import '../../../../styles';
+
+.usuario-buscar-container {
+  border: 1px solid $brd-tertiary-orange;
+  border-radius: 3px;
+}
+
+.conteudo-usuario {
+  width: 800px;
+  padding: 32px 40px;
+}
+
+button {
+  width: 180px;
+}
+
+.btn-download {
+  margin-left: 14px;
+  width: 38px !important;
+  background-color: $brd-tertiary-orange;
+}
+
+.icon-download {
+  color: white;
+}
+
+.input-autocomplete {
+  width: 400px;
+}
+
+.input-autocomplete {
+  color: $brd-tertiary-orange;
+  font-weight: 700;
+}
+
+.btn-pesquisar {
+  width: 51px !important;
+  color: white;
+  height: 51px;
+  margin-top: 3px;
+  background-color: $brd-tertiary-orange;
+}

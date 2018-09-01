@@ -1,0 +1,331 @@
+{
+  "home": {
+    "btn-login": "Faça o seu login <strong>WeBrado</strong>",
+    "container-login": {
+      "titulo": "Digite seu login e sua senha",
+      "input-login": "Login",
+      "input-senha": "Senha",
+      "btn-acessar": "Acessar",
+      "link-esqueceu-senha": "Esqueceu sua senha?",
+      "login-invalido": "Parece que houve um erro no seu login ou na sua senha!"
+    }
+  },
+  "esqueceu-senha": {
+    "titulo": "Recuperação de conta",
+    "texto": "Digite seu e-mail para que possamos enviar um link de renovação de senha WeBrado para ele.",
+    "titulo-enviado": "Enviamos um e-mail com a recuperação de senha!",
+    "texto-enviado": "Abra o seu e-mail e clique no link para criar uma nova senha <strong>WeBrado.</strong>",
+    "alerta-span": "Lembre-se que as vezes e-mail's de recuperação de senha, podem cair na sua caixa de spam!",
+    "input-email-label": "E-mail",
+    "btn-continuar": "Continuar",
+    "email-invalido": "O e-mail informado é inválido!"
+  },
+  "nova-senha": {
+    "titulo": "Nova senha",
+    "subtitulo": "Crie sua nova senha <strong>WeBrado!</strong>",
+    "btn-continuar": "Continuar",
+    "input": {
+      "nova-senha": "Digite sua nova senha",
+      "confirme-senha": "Confirme sua senha",
+      "senha-nao-sao-iguais": "Senhas informadas não são iguais",
+      "campo-obrigatorio": "Campo obrigatório"
+    },
+    "requisitos": {
+      "titulo": "Requisitos para nova senha",
+      "minimo-oito-caracteres": "Mínimo de 8 caracteres",
+      "caracteres-maiusculos": "Caracteres Maiúsculos (A-Z)",
+      "caracteres-minusculos": "Caracteres Minúsculos (a-z)",
+      "numeros": "Números (0-9)",
+      "caracteres-especiais": "Caracteres especiais (!@#$...)",
+      "nada-lembre-login": "Nada que lembre o login",
+      "senha-distinta": "Senha difernete da atual",
+      "nao-seguro": "Você não está seguro.",
+      "seguro": "Você está seguro."
+    },
+    "msg": {
+      "sucesso": "Você recuperou sua conta WeBrado com sucesso!",
+      "redirecionamento": "Você será redirecionado automaticamente"
+    }
+  },
+  "admin-modulos": {
+    "modulos": {
+      "administracao": "Administração",
+      "ppr": "PPR",
+      "telefonia": "Telefonia",
+      "portal": "Portal"
+    },
+    "modulos-descricao": {
+      "administracao": "Centro de administração de usuários da Brado.",
+      "ppr": "Consulte suas metas e crie incentivos à produtividade.",
+      "telefonia": "Centro de administração de usuários da Brado",
+      "portal": "Centro de administração de usuários da Brado"
+    },
+    "links": {
+      "cadastro-perfil": "Cadastro de perfil",
+      "cadastro-usuario": "Cadastro de usuário",
+      "cadastro-parametrizacoes": "Parametrizações"
+    },
+    "modal-termo": {
+      "imprimir": "Imprimir",
+      "checkbox-aceite": "Li todo o texto e entendi os Termos de Uso da Brado Logística.",
+      "botoes": {
+        "rejeitar": "Rejeitar",
+        "aceitar": "Aceitar"
+      }
+    },
+    "perfis": {
+      "modal-inicial": {
+        "titulo-webrado": "Perfis do We<strong>Brado</strong>",
+        "subtitulo": "Crie perfis com herarquias e restrições de funções",
+        "btn-criar-perfil": "Criar perfil",
+        "btn-editar-perfil": "Editar perfis"
+      },
+      "criar-perfil-nome": {
+        "input-placeholder": "Digite o nome do perfil",
+        "btn-avancar": "Avançar",
+        "btn-voltar": "voltar",
+        "msg-ajuda": "Digite o nome do seu novo perfil e clique em avançar para selecionar as atribuições"
+      },
+      "perfil-pesquisar": {
+        "input-placeholder": "Digite um nome de perfil",
+        "combo": {
+          "modulo-placeholder": "Módulos",
+          "status": {
+            "ativo": "Ativos",
+            "inativos": "Inativos",
+            "placeholder": "Status"
+          }
+        },
+        "btn": {
+          "voltar": "voltar",
+          "filtrar": "filtrar"
+        }
+      },
+      "listagem": {
+        "btn-voltar": "fazer outra busca",
+        "label-informativo": "Clique nas laterais para editar o perfil",
+        "filtros": {
+          "informativo": "Você está com <strong>{{total}}</strong> filtros de busca ativados:",
+          "ativo": "Ativos",
+          "inativos": "Inativos",
+          "resetar": "Resetar"
+        },
+        "table": {
+          "perfil": "Perfil",
+          "modulos": "Módulos"
+        }
+      },
+      "confirmar-inativacao": {
+        "atencao": "Atenção",
+        "mensagem-inativacao": "Deseja inativar o Perfil \"{{perfilName}}\" do WeBrado?",
+        "btn-inativar": "Inativar Perfil",
+        "btn-cancelar": "Cancelar Inativação"
+      },
+      "confirmar-ativacao": {
+        "atencao": "Ativar Perfil",
+        "mensagem-ativacao": "Deseja ativar o Perfil \"{{perfilName}}\" do WeBrado?",
+        "btn-ativar": "Ativar",
+        "btn-cancelar": "Cancelar"
+      },
+      "funcionalidades": {
+        "btn": {
+          "voltar": "Voltar",
+          "salvar": "Salvar",
+          "consultar": "Consultar",
+          "marcar-tudo": "Marcar tudo",
+          "desmarcar-tudo": "Desmarcar tudo"
+        }
+      },
+      "escolher-modulos": {
+        "titulo-novo": "Vamos iniciar as atribuições ao novo perfil",
+        "subtitulo": "Selecione os módulos a serem atribuidos",
+        "alerta-selecionar": "Necessário selecionar um módulo",
+        "btn": {
+          "voltar": "Voltar",
+          "avancar": "Avançar"
+        }
+      },
+      "perfil-erro": {
+        "btn-voltar": "Voltar",
+        "msg": "Erro#$%, houve um erro bizarro e não conseguimos encontrar!"
+      }
+    },
+    "usuarios": {
+      "modal-inicial": {
+        "titulo-webrado": "Usuários do We<strong>Brado</strong>",
+        "titulo-webrado-sucesso": "Sucesso!",
+        "subtitulo": "Clique em um dos dois botões e selecione sua opção",
+        "subtitulo-novo-cadastro": "O usuário {{nome}} foi adicionado ao banco do WeBrado",
+        "subtitulo-cadastro-editado": "O usuário {{nome}} foi alterado",
+        "btn-criar-usuario": "Criar Usuário",
+        "btn-editar-usuario": "Buscar Usuário"
+      },
+      "criar-usuario": {
+        "btn-voltar": "Voltar",
+        "btn-salvar": "Salvar",
+        "campos-obrigatorios": "* Campos obrigatórios",
+        "input": {
+          "email": "E-mail*",
+          "perfil-autorizacao": "Perfil de autorização*",
+          "unidade-servico": "Unidade de serviço",
+          "nome-usuario": "Nome do usuário*",
+          "terminais": "Terminais",
+          "tipo-usuario": "Tipo de usuário",
+          "empresa": "Empresa",
+          "telefone": "Telefone"
+        },
+        "validacoes": {
+          "email-obrigatorio": "E-mail é <strong>obrigatório</strong>",
+          "email-invalido": "E-mail <strong>inválido</strong>",
+          "telefone-invalido": "Telefone <strong>inválido</strong>",
+          "nome-obrigatorio": "Nome é <strong>obrigatório</strong>",
+          "perfil-obrigatorio": "Perfil é <strong>obrigatório</strong>"
+        }
+      },
+      "listagem": {
+        "btn-voltar": "Fazer outra busca",
+        "label-informativo": "Clique nas laterais para mostrar o perfil",
+        "filtros": {
+          "informativo": "Você está com <strong>{{total}}</strong> filtros de busca ativados:",
+          "ativo": "Ativo",
+          "inativo": "Inativo",
+          "resetar": "Resetar"
+        },
+        "table": {
+          "nome": "Nome de Usuário",
+          "empresa": "Empresa",
+          "perfil": "Perfil",
+          "todos": "Todos"
+        },
+        "detalhe": {
+          "nome": "Nome",
+          "login": "Login",
+          "tipo-usuario": "Tipo de Usuário",
+          "terminal": "Terminal",
+          "cliente": "Cliente",
+          "perfil": "Perfil",
+          "data-criacao": "Desde {{dataInicio}}",
+          "btn-inativar": "Inativar usuário",
+          "btn-ativar": "Ativar usuário",
+          "btn-editar": "Editar dados",
+          "btn-resetar": "Resetar senha",
+          "todos": "Todos"
+        }
+      },
+      "buscar-usuario": {
+        "btn-voltar": "Voltar",
+        "btn-filtrar": "Filtrar",
+        "input": {
+          "perfil-autorizacao": "Perfil de autorização",
+          "autocomplete": "Digite um nome ou e-mail",
+          "tipo-usuario": "Tipo de usuário",
+          "terminais": "Terminais",
+          "unidade-servico": "Unidade de serviço",
+          "status": "Ativos/Inativos",
+          "ativos": "Ativos",
+          "inativos": "Inativos"
+        }
+      },
+      "confirmar-inativacao": {
+        "atencao": "Atenção",
+        "mensagem-inativacao": "Deseja inativar o Usuário \"{{nome}}\" do WeBrado?",
+        "btn-inativar": "Inativar Usuário",
+        "btn-cancelar": "Cancelar Inativação"
+      },
+      "confirmar-ativacao": {
+        "atencao": "Ativar Usuário",
+        "mensagem-ativacao": "Deseja ativar o Usuário \"{{nome}}\" do WeBrado?",
+        "btn-ativar": "Ativar",
+        "btn-cancelar": "Cancelar"
+      },
+      "confirmar-reset-senha": {
+        "atencao": "Resetar senha",
+        "mensagem-reset-senha": "Deseja resetar a senha do Usuário \"{{nome}}\" do WeBrado?",
+        "btn-confirmar": "Confirmar",
+        "btn-cancelar": "Cancelar"
+      },
+      "usuario-erro": {
+        "btn-voltar": "Voltar",
+        "msg": "Erro#$%, houve um erro bizarro e não conseguimos encontrar!"
+      },
+      "modal-editar-usuario": {
+        "titulo-webrado": "Usuários do We<strong>Brado</strong>",
+        "subtitulo": "Edite o seu usuário e clique em salvar"
+      }
+    },
+    "parametrizacoes": {
+      "modal-inicial": {
+        "titulo": "Parametrizações",
+        "subtitulo": "Selecione uma das opções para gerenciar o portal",
+        "label-informativo": "Clique nas laterais para editar as parametrizações do site",
+        "titulos": {
+          "tempo-inatividade": "Tempo de Inatividade",
+          "configuracao-email": "Configuração de E-mail",
+          "imagens-email": "Imagens de E-mail",
+          "termo-uso": "Termos de Uso",
+          "telas-sistema": "Telas do Sistema",
+          "telas-app": "Telas do App"
+        },
+        "titulo-informativo": {
+          "tempo-inatividade": "Configurar tempo e dias de inatividade",
+          "configuracao-email": "Definir servidor de e-mail",
+          "imagens-email": "Atualizar e-mails temáticos",
+          "termo-uso": "Modificar as políticas internas",
+          "telas-sistema": "Personalizar backgrounds de Web",
+          "telas-app": "Personalizar backgrounds do Móvel"
+        }
+      },
+      "tempo-inatividade": {
+        "tempo-sesao": "Configure o tempo em que o usuário se mantém logado em inatividade",
+        "dias-sem-acesso": "Configure a quantidade de dias sem logar para inativação automática do usuário",
+        "btn-salvar": "Salvar"
+      },
+      "confg-email": {
+        "input": {
+          "servidor": "Servidor*",
+          "porta": "Porta*",
+          "usuario": "Usuário*",
+          "senha": "Senha*",
+          "remetente": "Remetente*",
+          "tls": "TLS",
+          "campo-obrigatorio": "Campo obrigatório"
+        },
+        "btn-salvar": "Salvar"
+      },
+      "imgs-email": {
+        "input": {
+          "email-cadastro": "E-mail de cadastro",
+          "email-reset": "E-mail de reset de senha"
+        },
+        "btn-salvar": "Salvar"
+      },
+      "termo-uso": {
+        "input": {
+          "termo-web": "Imagem da Web",
+          "termo-app": "Imagem do App(móvel)"
+        },
+        "btn-salvar": "Salvar"
+      },
+      "telas-web": {
+        "full-hd": "FullHD",
+        "notebook": "Notebook",
+        "input": {
+          "img-slide-um": "Imagem do slide 1",
+          "img-slide-dois": "Imagem do slide 2",
+          "img-slide-tres": "Imagem do slide 3",
+          "img-slide-quatro": "Imagem do slide 4",
+          "img-modulos": "Imagem do Menu de Módulos"
+        },
+        "informativo": "Otimizar imagens para web faz com que seu site carregue mais rápido e que seus visitantes não tenham que esperar tanto pelo carregamento",
+        "btn-salvar": "Salvar"
+      }
+    }
+  },
+  "enum": {
+    "tipo-usuario": {
+      "transportadora": "Transportadora",
+      "grupo-cliente": "Cliente",
+      "armador": "Armador"
+    }
+  }
+}

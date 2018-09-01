@@ -1,0 +1,162 @@
+@import '../../../../node_modules/compass-mixins/lib/compass/css3';
+@import '~@angular/material/theming';
+@import '../../../styles';
+
+$brd-background-login: #f2f2f2;
+$brd-border-login: #e6e4e5;
+
+$altura-body: calc(100vh - 90px);
+
+.degrade-superior {
+  height: 10px;
+  background-color: $brd-primary-color; // Old browsers
+  @include filter-gradient($brd-primary-color, $brd-secondary-color, horizontal); // IE6-9
+  @include background-image(linear-gradient(to right, $brd-primary-color 0%, $brd-secondary-color 100%));
+}
+
+.toolbar-transparent {
+  background-color: rgba(0, 0, 0, 0); // Old browsers
+  @include filter-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0), vertical); // IE6-9
+  @include background-image(linear-gradient(rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0) 100%));
+  height: 80px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  width: 100%;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.expand-toolbar-transparent {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  border-radius: $brd-border-radius-default;
+}
+
+// Cor da seta do dropdown no login
+::ng-deep .expand-painel-header > .mat-expansion-indicator:after {
+  color: white;
+}
+
+// Cor de background com degrade para componente de login
+::ng-deep .expand-toolbar-transparent > .mat-expansion-panel-content {
+  border-radius: 0 0 $brd-border-radius-default $brd-border-radius-default;
+
+  background-color: rgba(176, 176, 176, 0); // Old browsers
+  @include filter-gradient(rgba(176, 176, 176, 0), rgba(176, 176, 176, 1), vertical); // IE6-9
+  @include background-image(linear-gradient(rgba(176, 176, 176, 0) 0%, rgba(176, 176, 176, 1) 100%))
+}
+
+//::ng-deep .expand-toolbar-transparent > .mat-expansion-panel-body {
+//  padding: 0 24px 24px;
+//}
+
+.login-title {
+  color: white;
+  align-items: center;
+}
+
+.login-container {
+  background-color: $brd-background-login;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: $brd-border-radius-default $brd-border-radius-default 0 0;
+  border-bottom: 1px solid $brd-border-login;
+}
+
+.recuperar-senha-container-login {
+  background-color: $brd-background-login;
+  padding: 16px;
+  border-radius: 0 0 $brd-border-radius-default $brd-border-radius-default;
+  display: flex;
+  flex-direction: column;
+}
+
+.credenciais-invalidas-login {
+  color: mat-color($app-palette-warn);
+  white-space: initial;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.brado-logo {
+  height: 52px;
+}
+
+.btn-login {
+  color: white;
+}
+
+.icon-login {
+  margin-right: 12px;
+}
+
+.image-back {
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.container-body {
+  height: $altura-body;
+  display: flex;
+  align-items: flex-end;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: 50vh;
+}
+
+.slider-button-icon {
+  color: white;
+  margin: 0 40px;
+  height: 80px;
+  width: 80px;
+}
+
+.slider-icon {
+  height: 60px;
+  width: 60px;
+  opacity: 0.5;
+}
+
+.slider-position {
+  flex: 1;
+}
+
+.slider-container-atual-position {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.actual-step {
+  height: 15px;
+  width: 15px;
+  border: 3px solid white;
+  margin-right: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.step-active {
+  background-color: $brd-primary-color;
+}
+
+.actual-step:last-child {
+  margin-right: 0;
+}
+
+.span-title-login {
+  color: $brd-tertiary-blue;
+  margin-bottom: 8px;
+}
+
+.basic-container-login {
+  width: 380px;
+}

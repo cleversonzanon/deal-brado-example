@@ -1,0 +1,90 @@
+<div class="border-pesquisar-perfil"
+     fxLayout="column">
+
+  <ngx-loading [show]="submitLoading">
+  </ngx-loading>
+
+  <div class="conteudo-perfil"
+       fxLayout="column"
+       fxLayoutAlign="space-between none">
+
+    <form autocomplete="off"
+          id="form-perfil-filtro"
+          (ngSubmit)="submitFiltro()"
+          [formGroup]="filtrarForm">
+
+      <div fxLayout="row" fxLayoutAlign="center">
+
+        <mat-form-field appearance="outline"
+                        class="input-nome-perfil">
+          <input matInput
+                 class="input-name"
+                 formControlName="nome"
+                 [placeholder]="'admin-modulos.perfis.perfil-pesquisar.input-placeholder' | translate"
+                 [matAutocomplete]="nomeFiltro">
+
+          <mat-autocomplete #nomeFiltro="matAutocomplete">
+            <mat-option *ngFor="let perfil of perfilList" [value]="perfil">
+              {{perfil}}
+            </mat-option>
+          </mat-autocomplete>
+
+        </mat-form-field>
+
+        <button mat-raised-button
+                type="submit"
+                class="btn-pesquisar">
+          <mat-icon class="search-icon">search</mat-icon>
+        </button>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+
+        <!-- CAMPO DE ATIVO -->
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.perfis.perfil-pesquisar.combo.status.placeholder' | translate"
+                      formControlName="ativo">
+            <mat-option *ngFor="let status of statusList"
+                        [value]="status.value">
+              {{status.label | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.perfis.perfil-pesquisar.combo.modulo-placeholder' | translate"
+                      formControlName="modulos" multiple>
+            <mat-option *ngFor="let modulo of moduloList" [value]="modulo">{{modulo.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="btn-row">
+      <button mat-stroked-button
+              class="btn-voltar"
+              (click)="onClickVoltar($event)">
+        <mat-icon>
+          keyboard_arrow_left
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.perfil-pesquisar.btn.voltar' | translate}}
+        </strong>
+      </button>
+
+      <button mat-raised-button
+              form="form-perfil-filtro"
+              type="submit"
+              class="btn-filtrar">
+        <mat-icon>
+          filter_list
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.perfil-pesquisar.btn.filtrar' | translate}}
+        </strong>
+      </button>
+    </div>
+
+  </div>
+
+</div>

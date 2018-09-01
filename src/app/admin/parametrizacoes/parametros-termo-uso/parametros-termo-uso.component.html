@@ -1,0 +1,67 @@
+<div fxLayout="column"
+     class="termo-uso-container">
+
+  <div fxLayout="row">
+    <mat-form-field fxFlex="95"
+                    (click)="fileTermoWeb.inputElement.click()"
+                    (keyup.enter)="fileTermoWeb.inputElement.click()"
+                    (keyup.delete)="fileTermoWeb.clear()"
+                    (keyup.backspace)="fileTermoWeb.clear()">
+      <input matInput
+             [placeholder]="'admin-modulos.parametrizacoes.termo-uso.input.termo-web' | translate"
+             [value]="imgWebFile?.name"
+             readonly/>
+    </mat-form-field>
+
+    <button mat-icon-button
+            *ngIf="imgWebFile"
+            (click)="fileTermoWeb.clear()"
+            (keyup.enter)="fileTermoWeb.clear()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+
+    <td-file-input #fileTermoWeb
+                   [(ngModel)]="imgWebFile">
+    </td-file-input>
+  </div>
+
+  <div fxLayout="row">
+    <mat-form-field fxFlex="95"
+                    (click)="fileTermoApp.inputElement.click()"
+                    (keyup.enter)="fileTermoApp.inputElement.click()"
+                    (keyup.delete)="fileTermoApp.clear()"
+                    (keyup.backspace)="fileTermoApp.clear()">
+      <input matInput
+             [placeholder]="'admin-modulos.parametrizacoes.termo-uso.input.termo-app' | translate"
+             [value]="imgAppFile?.name"
+             readonly/>
+    </mat-form-field>
+
+    <button mat-icon-button
+            *ngIf="imgAppFile"
+            (click)="fileTermoApp.clear()"
+            (keyup.enter)="fileTermoApp.clear()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+
+    <td-file-input #fileTermoApp
+                   [(ngModel)]="imgAppFile">
+    </td-file-input>
+  </div>
+
+  <div fxLayout="row"
+       fxLayoutAlign="end">
+
+    <button mat-raised-button
+            class="btn-salvar"
+            type="submit"
+            color="accent">
+      <mat-icon>
+        save
+      </mat-icon>
+      <strong>
+        {{'admin-modulos.parametrizacoes.termo-uso.btn-salvar' | translate}}
+      </strong>
+    </button>
+  </div>
+</div>

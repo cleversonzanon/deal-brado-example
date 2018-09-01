@@ -1,0 +1,46 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO"
+                  [showLogo]="true">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <span class="mat-h1 titulo-inativacao">
+      {{'admin-modulos.usuarios.confirmar-inativacao.atencao' | translate}}
+    </span>
+
+    <span class="mat-h4 subtitulo-inativacao">
+      {{'admin-modulos.usuarios.confirmar-inativacao.mensagem-inativacao' | translate: {nome: usuario?.name} }}
+    </span>
+
+    <div class="row-confirmacao-buttons">
+      <button mat-raised-button
+              color="warn"
+              class="btn-modal-confirmacao btn-inativar"
+              (click)="onClickInativar()">
+        <mat-icon>
+          close
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.usuarios.confirmar-inativacao.btn-inativar' | translate}}
+        </strong>
+      </button>
+      <button mat-stroked-button
+              color="warn"
+              class="btn-modal-confirmacao"
+              (click)="onClickCancelar()">
+        <strong>
+          {{'admin-modulos.usuarios.confirmar-inativacao.btn-cancelar' | translate}}
+        </strong>
+      </button>
+    </div>
+  </div>
+
+
+</div>

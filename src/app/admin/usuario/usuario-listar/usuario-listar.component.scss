@@ -1,0 +1,149 @@
+@import '../../../../../node_modules/compass-mixins/lib/compass/css3';
+@import '~@angular/material/theming';
+@import '../../../../styles';
+
+.left-container-informativo {
+  img {
+    margin-top: 40px;
+  }
+
+  .label-informativo {
+    color: $dark-secondary-text;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.label-total-filtros-usuarios {
+  width: 175px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.right-container {
+  margin: 0 0 20px !important; // Rever o fxFill
+
+  .container-lista {
+    position: relative;
+    max-height: 560px;
+    overflow: auto;
+  }
+
+  .container-lista::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* width */
+  .container-lista::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  .container-lista::-webkit-scrollbar-track {
+    background: rgba(195, 194, 194, 1.0);
+    border-radius: 7px;
+  }
+
+  /* Handle */
+  .container-lista::-webkit-scrollbar-thumb {
+    background: $brd-secondary-color;
+    border-radius: 7px;
+  }
+
+  /* Handle on hover */
+  .container-lista::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.inf-usuario-status {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: mat-color($app-palette-warn);
+}
+
+.inf-usuario-status-ativo {
+  background-color: $brd-secondary-color;
+}
+
+.label-table {
+  color: $dark-secondary-text
+}
+
+.text-usuario-excluir {
+  color: mat-color($app-palette-warn);
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+.text-usuario-editar {
+  color: mat-color($app-palette-accent);
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+.text-usuario-resetar {
+  color: mat-color($secondary-primary);
+  font-weight: 700;
+  margin-top: 14px;
+}
+
+// Hover na tabela
+.mat-row:hover {
+  background-color: #838383;
+  cursor: pointer;
+
+  .label-table {
+    color: white;
+  }
+}
+
+.img-usuarios-iniciais {
+  height: 72px;
+  width: 72px;
+  border: 3px solid mat-color($app-palette-accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 28px;
+
+  background-color: $brd-primary-color; // Old browsers
+  @include filter-gradient($brd-primary-color, $brd-secondary-color, horizontal); // IE6-9
+  @include background-image(linear-gradient(to bottom, $brd-primary-color 0%, $brd-secondary-color 100%));
+}
+
+.detalhe-usuario-titulo {
+  color: $dark-secondary-text;
+  font-size: 12px;
+}
+
+.detalhe-usuario-data {
+  color: $dark-secondary-text;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.detalhe-usuario-valor {
+  color: mat-color($app-palette-primary);
+  margin-bottom: 15px;
+}
+
+.tipo-usuario-label:after {
+  content: ',';
+}
+
+.tipo-usuario-label:last-child:after {
+  content: '';
+}
+
+.container-usuario-selecionado {
+
+}
+
+.row-btns-usuario {
+
+}

@@ -1,0 +1,26 @@
+<div mat-dialog-title
+     fxLayout="row"
+     fxLayoutAlign="center"
+     [class.header-modal-size]="showLogo"
+     [ngClass]="{
+       'header-modal-background-perfil': tipoHeaderModal === ModalType.HEADER_PERFIL,
+       'header-modal-background-usuarios': tipoHeaderModal === ModalType.HEADER_USUARIO
+     }"
+     class="header-modal-background">
+
+  <img class="img-top-perfil"
+       *ngIf="showLogo"
+       [@slideInOut]
+       [src]="logoImgHeader[tipoHeaderModal]">
+
+  <div fxLayout="row"
+       fxFill
+       fxLayoutAlign="end">
+    <button mat-icon-button
+            (click)="onClickCloseModal($event)">
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </div>
+</div>

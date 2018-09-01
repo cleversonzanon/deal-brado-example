@@ -1,0 +1,47 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [showLogo]="true">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <span class="mat-h1 titulo-ativacao">
+      {{'admin-modulos.perfis.confirmar-ativacao.atencao' | translate}}
+    </span>
+
+    <span class="mat-h4 subtitulo-ativacao">
+      {{'admin-modulos.perfis.confirmar-ativacao.mensagem-ativacao' | translate:perfil}}
+    </span>
+
+    <div class="row-confirmacao-buttons">
+      <button mat-raised-button
+              class="btn-modal-confirmacao btn-cancel"
+              color="warn"
+              (click)="onClickCancelar()">
+        <mat-icon>
+          close
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.confirmar-ativacao.btn-cancelar' | translate}}
+        </strong>
+      </button>
+
+      <button mat-raised-button
+              class="btn-modal-confirmacao"
+              color="accent"
+              (click)="onClickAtivar()">
+        <mat-icon>
+          check
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.confirmar-ativacao.btn-ativar' | translate}}
+        </strong>
+      </button>
+    </div>
+  </div>
+</div>

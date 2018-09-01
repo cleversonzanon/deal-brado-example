@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="82px" viewBox="0 0 81 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-ppr laranja@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Menu-de-Módulos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-ppr-laranja" transform="translate(2.000000, 2.000000)" stroke="#F37721" stroke-width="3">
+            <path d="M27,27 L27,5.0625 C27,2.19375 29.2413793,0 32.1724138,0 L71.8275862,0 C74.7586207,0 77,2.19375 77,5.0625 L77,48.9375 C77,51.80625 74.7586207,54 71.8275862,54 L28.7241379,54" id="Shape"></path>
+            <polyline id="Shape" points="36 27.0555556 36 15 46 15 46 46 36 46 36 40.8333333"></polyline>
+            <rect id="Rectangle-path" x="46" y="27" width="10" height="19"></rect>
+            <rect id="Rectangle-path" x="56" y="9" width="10" height="37"></rect>
+            <path d="M23.7391304,80 L23.7391304,37.7586207 L32.2173913,37.7586207 C37.3043478,37.7586207 39,34.7172414 39,31 C36.2869565,31 11.5304348,31 8.47826087,31 C5.25652174,31 0,33.5344828 0,41.137931 L0,52.9655172 C0,56.5137931 3.22173913,59.7241379 6.7826087,59.7241379" id="Shape"></path>
+            <path d="M15,56 L15,80" id="Shape"></path>
+            <path d="M7,41 L7,80" id="Shape"></path>
+            <path d="M21,20 C21,22.8333333 18.7714286,25 15.8571429,25 L14.1428571,25 C11.2285714,25 9,22.8333333 9,20 L9,15 C9,12.1666667 11.2285714,10 14.1428571,10 L15.8571429,10 C18.7714286,10 21,12.1666667 21,15 L21,20 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

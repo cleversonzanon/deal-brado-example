@@ -1,0 +1,106 @@
+<div fxLayout="column"
+     class="imgs-sistema-container">
+
+  <!-- TITULOS -->
+  <div fxLayout="row">
+    <div fxFlex="50"
+         fxLayout="row"
+         fxLayoutAlign="center center">
+      <mat-icon>home</mat-icon>
+      <strong>{{'admin-modulos.parametrizacoes.telas-web.full-hd' | translate}}</strong>
+    </div>
+    <div fxFlex="50"
+         fxLayout="row"
+         fxLayoutAlign="center center">
+      <mat-icon>home</mat-icon>
+      <strong>{{'admin-modulos.parametrizacoes.telas-web.notebook' | translate}}</strong>
+    </div>
+  </div>
+
+  <!-- IMG SLIDE 1 -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-um' | translate"
+                        color="primary"
+                        fxFlex="50">
+    </app-input-file-img>
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-um' | translate"
+                        color="accent"
+                        fxFlex="50">
+    </app-input-file-img>
+  </div>
+
+  <!-- IMG SLIDE 2 -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-dois' | translate"
+                        color="primary"
+                        fxFlex="50">
+    </app-input-file-img>
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-dois' | translate"
+                        color="accent"
+                        fxFlex="50">
+    </app-input-file-img>
+  </div>
+
+  <!-- IMG SLIDE 3 -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-tres' | translate"
+                        color="primary"
+                        fxFlex="50">
+    </app-input-file-img>
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-tres' | translate"
+                        color="accent"
+                        fxFlex="50">
+    </app-input-file-img>
+  </div>
+
+  <!-- IMG SLIDE 4 -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-quatro' | translate"
+                        color="primary"
+                        fxFlex="50">
+    </app-input-file-img>
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-slide-quatro' | translate"
+                        color="accent"
+                        fxFlex="50">
+    </app-input-file-img>
+  </div>
+
+  <!-- IMG MENU DE MODULOS -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <app-input-file-img [placeholder]="'admin-modulos.parametrizacoes.telas-web.input.img-modulos' | translate"
+                        color="primary"
+                        fxFlex="50">
+    </app-input-file-img>
+  </div>
+
+  <!-- TEXTO INFORMATIVO -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row">
+    <span>
+      {{'admin-modulos.parametrizacoes.telas-web.informativo' | translate}}
+    </span>
+  </div>
+
+  <!-- LINHA COM ACAO -->
+  <!-------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row"
+       fxLayoutAlign="end">
+
+    <button mat-raised-button
+            class="btn-salvar"
+            type="submit"
+            color="accent">
+      <mat-icon>
+        save
+      </mat-icon>
+      <strong>
+        {{'admin-modulos.parametrizacoes.telas-web.btn-salvar' | translate}}
+      </strong>
+    </button>
+  </div>
+</div>

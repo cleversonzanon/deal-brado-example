@@ -1,0 +1,28 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO"
+                  [showLogo]="false">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <div class="usuario-editar-container-titles"
+       fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <span class="mat-h1 titulo"
+          [innerHTML]="'admin-modulos.usuarios.modal-editar-usuario.titulo-webrado' | translate">
+    </span>
+
+    <span class="mat-h4 subtitulo">
+      {{'admin-modulos.usuarios.modal-editar-usuario.subtitulo' | translate}}
+    </span>
+  </div>
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column"
+       class="conteudo-edit-container">
+    <app-usuario-criar (clickVoltar)="onClickVoltar()">
+    </app-usuario-criar>
+  </div>
+</div>

@@ -1,0 +1,184 @@
+<app-modal-header (closeModal)="onClickClose()"></app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <!-- CONTEUDO DA MODAL-->
+  <div class="conteudo-modal"
+       fxFill
+       fxLayout="row">
+
+    <!-- CONTEUDO LADO ESQUERDO -->
+    <div fxFlex="25"
+         fxLayout="column"
+         fxLayoutAlign="start center"
+         class="container-voltar">
+
+      <button mat-stroked-button
+              class="btn-voltar"
+              (click)="onClickVoltar()">
+        <mat-icon>
+          keyboard_arrow_left
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.listagem.btn-voltar' | translate}}
+        </strong>
+      </button>
+
+      <img src="../../../../assets/background-imagens/perfil/user-brado-alone.png">
+
+      <strong class="label-informativo">
+        {{'admin-modulos.perfis.listagem.label-informativo' | translate}}
+      </strong>
+    </div>
+
+    <!-- CONTEUDO LADO DIREITO (TABLE)-->
+    <div fxFlex="75">
+
+      <div fxLayout="row"
+           *ngIf="filtrosAtivos"
+           fxLayoutAlign="start center">
+
+        <span
+          class="label-total-filtros"
+          [innerHTML]="'admin-modulos.perfis.listagem.filtros.informativo' | translate:{total: totalFiltrosAtivos()}">
+        </span>
+
+        <!-- FILTROS ATIVOS -->
+        <mat-chip-list>
+          <!-- FILTRO DE NOME -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.nome"
+                    (removed)="onClickRemoverFiltro('nome')"
+                    selected>
+            {{filtrosAtivos.nome}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE ATIVOS -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.ativo === true"
+                    (removed)="onClickRemoverFiltro('ativo')"
+                    selected>
+            {{'admin-modulos.perfis.listagem.filtros.ativo' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE INATIVOS -->
+          <mat-chip color="primary"
+                    *ngIf="filtrosAtivos?.ativo === false"
+                    (removed)="onClickRemoverFiltro('ativo')"
+                    selected>
+            {{'admin-modulos.perfis.listagem.filtros.inativos' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- FILTRO DE MODULOS -->
+          <mat-chip color="primary"
+                    *ngFor="let modulo of filtrosAtivos?.modulos; let position = index;"
+                    (removed)="onClickRemoverFiltroModulo(position)"
+                    selected>
+            {{modulo.name}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+
+          <!-- REMOVER FILTROS -->
+          <mat-chip color="accent"
+                    *ngIf="filtrosAtivos"
+                    (removed)="onClickResetarFiltros()"
+                    selected>
+            {{'admin-modulos.perfis.listagem.filtros.resetar' | translate}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+
+      <!-- TABELA COM A LISTAGEM -->
+      <div class="container-lista"
+           #scrollTable
+           (scroll)="onTableScroll($event)">
+        <table mat-table
+               fxFill
+               [dataSource]="listaPaginada?.content">
+
+          <!-- coluna ativo -->
+          <ng-container matColumnDef="ativo">
+            <th mat-header-cell
+                *matHeaderCellDef>
+            </th>
+            <td mat-cell
+                *matCellDef="let element">
+              <div class="inf-status"
+                   [class.inf-status-inativo]="element.active">
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- coluna perfil -->
+          <ng-container matColumnDef="perfil">
+            <th mat-header-cell
+                *matHeaderCellDef>
+              <strong>
+                {{'admin-modulos.perfis.listagem.table.perfil' | translate}}
+              </strong>
+            </th>
+            <td mat-cell
+                class="span-max-dot"
+                *matCellDef="let element">
+              <span class="label-table">
+                {{element.name}}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- coluna modulos -->
+          <ng-container matColumnDef="modulos">
+            <th mat-header-cell
+                *matHeaderCellDef>
+              <strong>
+                {{'admin-modulos.perfis.listagem.table.modulos' | translate}}
+              </strong>
+            </th>
+            <td mat-cell
+                *matCellDef="let element">
+              <span class="label-table ">
+                {{element.modules}}
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- Coluna para edicao -->
+          <ng-container matColumnDef="actions-editar">
+            <th mat-header-cell *matHeaderCellDef>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button
+                      (click)="onClickEditar(element)">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <!-- coluna para ativacao/inativacao-->
+          <ng-container matColumnDef="actions-status">
+            <th mat-header-cell *matHeaderCellDef>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button
+                      (click)="onClickAlterarStatus(element)">
+                <mat-icon>
+                  {{element.active ? 'highlight_off' : 'add_circle_outline'}}
+                </mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunasDaTabela; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunasDaTabela;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

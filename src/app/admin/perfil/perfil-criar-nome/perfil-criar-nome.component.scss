@@ -1,0 +1,73 @@
+@import '../../../../styles';
+@import '~@angular/material/theming';
+
+.border-perfil-criar-nome {
+  border: 1px solid $brd-tertiary-orange;
+  border-radius: 3px;
+}
+
+.conteudo-perfil {
+  width: 800px;
+  padding: 60px 40px 40px 40px;
+}
+
+.input-name {
+  color: $brd-tertiary-orange;
+  font-weight: 700;
+}
+
+.msg-error {
+  color: mat-color($app-palette-warn);
+}
+
+.input-nome-perfil {
+  width: 400px;
+}
+
+.texto-aviso {
+  color: $brd-text-secondary;
+  width: 58%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-avancar {
+  width: 250px;
+  color: white;
+  height: 51px;
+  margin-bottom: 21px;
+  background-color: $brd-tertiary-orange;
+}
+
+.btn-voltar {
+  width: 180px;
+  color: $brd-tertiary-orange;
+}
+
+.row-btn-voltar {
+  width: 650px;
+
+}
+
+//.conteudo-perfil:before {
+//  content: '';
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  transform: translateX(215px);
+//  border-right: 15px solid transparent;
+//  border-left: 15px solid transparent;
+//  border-top: 15px solid $brd-tertiary-orange;
+//}
+//
+//.conteudo-perfil:after {
+//  content: '';
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  transform: translateX(215px);
+//  border-right: 15px solid white;
+//  border-left: 15px solid white;
+//  border-top: 15px solid white;
+//}
+

@@ -1,0 +1,92 @@
+<app-modal-header (closeModal)="onClickClose()"></app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <div class="border-escolher-modulos"
+       fxLayout="column">
+
+    <div class="conteudo-escolher-modulos"
+         fxLayout="column"
+         fxLayoutAlign="center center">
+
+      <span class="mat-h1 titulo-escolher-modulos">
+        {{'admin-modulos.perfis.escolher-modulos.titulo-novo' | translate}}
+      </span>
+
+      <span class="mat-h4 subtitulo-escolher-modulos">
+        {{'admin-modulos.perfis.escolher-modulos.subtitulo' | translate}}
+      </span>
+
+      <div fxLayout="row"
+           fxLayoutAlign="space-around"
+           fxFill>
+
+        <div fxLayout="column"
+             fxLayoutAlign="center center"
+             class="secondary-theme"
+             *ngFor="let modulo of moduloList">
+
+          <mat-icon class="icone-modulo"
+                    [svgIcon]="modulo.selecionado ? modulo.icone + '-laranja' : modulo.icone + '-cinza'">
+          </mat-icon>
+
+          <h3 class="modulo-name">
+            {{modulo.name}}
+          </h3>
+
+          <mat-checkbox color="primary"
+                        [(ngModel)]="modulo.selecionado">
+          </mat-checkbox>
+        </div>
+      </div>
+
+      <!-- BOTOES DE ACAO -->
+      <div fxLayout="row"
+           fxFill
+           class="row-buttons secondary-theme"
+           fxLayoutAlign="space-between">
+
+        <button mat-stroked-button
+                class="btn-escolher-modulo"
+                color="primary"
+                (click)="onClickVoltar()">
+          <mat-icon>
+            keyboard_arrow_left
+          </mat-icon>
+          <strong>
+            {{'admin-modulos.perfis.escolher-modulos.btn.voltar' | translate}}
+          </strong>
+        </button>
+
+        <div fxLayout="row"
+             *ngIf="!temModuloSelecionado()"
+             fxLayoutAlign="center center">
+          <mat-icon color="primary">
+            warning
+          </mat-icon>
+          <span class="alert-message">
+            {{'admin-modulos.perfis.escolher-modulos.alerta-selecionar' | translate}}
+          </span>
+        </div>
+
+        <button mat-raised-button
+                (click)="onClickAvancar()"
+                [disabled]="!temModuloSelecionado()"
+                color="primary"
+                class="btn-escolher-modulo">
+          <strong>
+            {{'admin-modulos.perfis.escolher-modulos.btn.avancar' | translate}}
+          </strong>
+          <mat-icon>
+            keyboard_arrow_right
+          </mat-icon>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

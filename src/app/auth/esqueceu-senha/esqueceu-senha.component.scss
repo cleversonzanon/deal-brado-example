@@ -1,0 +1,72 @@
+@import '~@angular/material/theming';
+@import '../../../styles';
+
+.body-recuperar-senha {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: url("../../../assets/background-imagens/esqueceu-senha/recuperarsenha-inferior.jpg") no-repeat bottom right;
+  background-size: 100%;
+}
+
+.img-top {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+}
+
+.recuperar-senha-container {
+  width: 700px;
+  z-index: 10;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 28px 0 rgba(185, 185, 185, 0.50);
+  border-radius: 8px;
+
+  @media (min-width: 1400px) {
+    margin-bottom: 75px;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+}
+
+.recuperar-senha-titulo {
+  margin-bottom: 20px !important;
+  text-align: center;
+  color: $brd-primary-color;
+  letter-spacing: -2px !important;
+}
+
+.recuperar-senha-subtitulo {
+  text-align: center;
+}
+
+.row-button {
+  display: flex;
+  justify-content: center;
+}
+
+.button-submit {
+  width: 180px;
+}
+
+.alert-container {
+  display: flex;
+  background-color: #f0f0d4;
+  padding: 14px 24px;
+  align-items: center;
+}
+
+.alert-text {
+  padding-left: 14px;
+  color: mat-color($app-palette-warn);
+}
+
+.email-invalido {
+  margin-top: 1.25em;
+}

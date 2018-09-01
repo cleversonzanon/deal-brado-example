@@ -1,0 +1,147 @@
+<img src="../../../assets/background-imagens/nova-senha/recuperarsenha-superior.jpg"
+     class="img-top">
+
+<div class="body-nova-senha">
+  <div class="mat-typography nova-senha-container">
+
+    <!-- Formulario para reset -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <div class="nova-senha-modal-container"
+         *ngIf="!formSubmited; else confirmacaoMsg">
+      <form autocomplete="off"
+            [formGroup]="novaSenhaForm"
+            (ngSubmit)="onSubmitForm()"
+            class="nova-senha-form container-inputs">
+
+        <ngx-loading [show]="loading"></ngx-loading>
+
+        <span class="nova-senha-titulo mat-display-2">
+          {{'nova-senha.titulo' | translate}}
+        </span>
+
+        <span class="mat-h2 nova-senha-subtitulo"
+              [innerHtml]="'nova-senha.subtitulo' | translate">
+        </span>
+
+        <mat-form-field>
+          <mat-label>
+            {{'nova-senha.input.nova-senha' | translate}}
+          </mat-label>
+          <input matInput
+                 formControlName="newpassword"
+                 [type]="showPassword ? 'text': 'password'">
+          <mat-icon matSuffix
+                    (click)="showPassword = !showPassword">
+            {{showPassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+
+          <!-- ERROR'S -->
+          <mat-error *ngIf="novaSenhaForm.get('newpassword').hasError('required')">
+            {{'nova-senha.input.campo-obrigatorio' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>
+            {{'nova-senha.input.confirme-senha' | translate}}
+          </mat-label>
+          <input matInput
+                 formControlName="newpasswordconfirm"
+                 [type]="showPassword ? 'text': 'password'">
+          <mat-icon matSuffix
+                    (click)="showPassword = !showPassword">
+            {{showPassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+
+          <!-- ERROR'S -->
+          <mat-error>
+            <span *ngIf="novaSenhaForm.get('newpasswordconfirm').hasError(ErrorType.SENHAS_DIFERENTES)">
+              {{'nova-senha.input.senha-nao-sao-iguais' | translate}}
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="nova-senha-row-button">
+          <button mat-raised-button
+                  [disabled]="!novaSenhaForm.valid"
+                  class="nova-senha-button-submit"
+                  color="primary"
+                  type="submit">
+            <strong>
+              {{'nova-senha.btn-continuar' | translate}}
+            </strong>
+          </button>
+        </div>
+      </form>
+
+      <div class="nova-senha-form requisitos-container">
+        <span class="mat-h2">
+          {{'nova-senha.requisitos.titulo' | translate}}
+        </span>
+
+        <div *ngFor="let requisito of requisitosDeSenha"
+             class="nova-senha-requisito">
+          <mat-icon class="requisito-color-default"
+                    [class.requisito-atendido-color]="!novaSenhaForm.get('newpassword').hasError(requisito.errorType)">
+            {{novaSenhaForm.get('newpassword').hasError(requisito.errorType) ? 'panorama_fish_eye' :
+            'check_circle_outline'}}
+          </mat-icon>
+
+          <span style="margin-left: 8px;"
+                class="requisito-color-default"
+                [class.requisito-atendido-color]="!novaSenhaForm.get('newpassword').hasError(requisito.errorType)">
+            {{requisito.label | translate}}
+          </span>
+        </div>
+
+        <div class="requisito-feedback-container"
+             *ngIf="novaSenhaForm.get('newpassword').errors; else requisitoSenhaSegura">
+          <div class="fundo-icone fundo-icone-warn">
+            <mat-icon class="icone-grande">
+              lock_open
+            </mat-icon>
+          </div>
+          <span class="mat-h2 requisito-feedback-texto">
+            {{'nova-senha.requisitos.nao-seguro' | translate}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback de senha segura -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <ng-template #requisitoSenhaSegura>
+      <div class="requisito-feedback-container">
+        <div class="fundo-icone fundo-icone-success">
+          <mat-icon class="icone-grande">
+            lock
+          </mat-icon>
+        </div>
+        <span class="mat-h2 requisito-feedback-texto">
+            {{'nova-senha.requisitos.seguro' | translate}}
+          </span>
+      </div>
+    </ng-template>
+
+    <!-- Mensagem de confirmacao -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <ng-template #confirmacaoMsg>
+      <div class="nova-senha-sucesso-container">
+        <div class="nova-senha-sucesso">
+          <mat-icon color="primary"
+                    class="icone-grande">
+            cached
+          </mat-icon>
+
+          <span class="nova-senha-titulo mat-display-2">
+            {{'nova-senha.msg.sucesso' | translate}}
+          </span>
+
+          <span class="mat-h2">
+            {{'nova-senha.msg.redirecionamento' | translate}}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

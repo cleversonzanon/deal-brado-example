@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import '../../../../styles';
+
+.row-confirmacao-buttons {
+  margin-bottom: 80px
+}
+
+.btn-modal-confirmacao {
+  width: 320px;
+  height: 46px;
+}
+
+.btn-inativar {
+  margin-right: 20px;
+}
+
+.titulo-inativacao {
+  color: mat-color($app-palette-warn);
+  font-size: 36px;
+}
+
+.subtitulo-inativacao {
+  color: mat-color($app-palette-warn);
+  font-weight: 700;
+}

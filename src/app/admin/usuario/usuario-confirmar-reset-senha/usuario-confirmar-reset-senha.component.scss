@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import '../../../../styles';
+
+.row-confirmacao-buttons {
+  margin-bottom: 80px
+}
+
+.btn-modal-reset {
+  width: 320px;
+  height: 46px;
+}
+
+.btn-cancelar {
+  margin-right: 20px;
+}
+
+.titulo-reset-senha {
+  color: mat-color($app-palette-accent);
+  font-size: 36px;
+}
+
+.subtitulo-reset-senha {
+  color: $dark-secondary-text;
+  font-weight: 700;
+}

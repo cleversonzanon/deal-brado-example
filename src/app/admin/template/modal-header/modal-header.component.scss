@@ -1,0 +1,24 @@
+.header-modal-background {
+  background-size: 100%;
+  color: white;
+  position: relative;
+  min-width: 1000px;
+}
+
+.header-modal-background-perfil {
+  background: url("../../../../assets/background-imagens/perfil/backgorund-orange.png") no-repeat bottom left;
+}
+
+.header-modal-background-usuarios {
+  background: url("../../../../assets/background-imagens/esqueceu-senha/recuperarsenha-superior.jpg") no-repeat bottom center;
+}
+
+.img-top-perfil {
+  height: 200px;
+  position: absolute;
+  bottom: -12px;
+}
+
+.header-modal-size {
+  height: 160px;
+}

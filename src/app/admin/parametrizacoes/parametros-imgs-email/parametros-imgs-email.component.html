@@ -1,0 +1,65 @@
+<div fxLayout="column"
+     class="imgs-email-container">
+
+  <form [formGroup]="imagemEmailForm" (ngSubmit)="submit()">
+    <div fxLayout="row">
+      <mat-form-field fxFlex="95"
+                      (click)="fileEmailCadastro.inputElement.click()">
+        <input matInput
+               [placeholder]="'admin-modulos.parametrizacoes.imgs-email.input.email-cadastro' | translate"
+               [value]="emailCadastroFile?.name"
+               readonly/>
+      </mat-form-field>
+
+      <button mat-icon-button
+              *ngIf="emailCadastroFile"
+              (click)="fileEmailCadastro.clear()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+
+      <td-file-input [(ngModel)]="emailCadastroFile" #fileEmailCadastro>
+      </td-file-input>
+    </div>
+
+    <div fxLayout="row">
+      <mat-form-field fxFlex="95"
+                      (click)="fileResetSenha.inputElement.click()"
+                      (keyup.enter)="fileResetSenha.inputElement.click()"
+                      (keyup.delete)="fileResetSenha.clear()"
+                      (keyup.backspace)="fileResetSenha.clear()">
+        <input matInput
+               [placeholder]="'admin-modulos.parametrizacoes.imgs-email.input.email-reset' | translate"
+               [value]="emailResetSenhaFile?.name"
+               readonly/>
+      </mat-form-field>
+
+      <button mat-icon-button
+              *ngIf="emailResetSenhaFile"
+              (click)="fileResetSenha.clear()"
+              (keyup.enter)="fileResetSenha.clear()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+
+      <td-file-input #fileResetSenha
+                     [(ngModel)]="emailResetSenhaFile">
+      </td-file-input>
+    </div>
+
+    <div fxLayout="row"
+         fxLayoutAlign="end">
+
+      <button mat-raised-button
+              (click)="submit()"
+              class="btn-salvar"
+              type="submit"
+              color="accent">
+        <mat-icon>
+          save
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.parametrizacoes.imgs-email.btn-salvar' | translate}}
+        </strong>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="93px" viewBox="0 0 97 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-telefonia cinza@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Menu-de-Módulos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-telefonia-cinza" transform="translate(2.000000, 2.000000)" stroke="#9B9B9B" stroke-width="3">
+            <path d="M23.1906077,66.2127072 C41.7430939,84.7651934 59.4889503,88.5966851 65.941989,89 C70.1767956,82.9502762 71.7900552,77.9088398 73,73.2707182 C68.5635359,68.8342541 61.9088398,64.3977901 55.859116,61.7762431 L48.801105,68.8342541 C46.3812155,68.2292818 39.7265193,65.4060773 31.660221,57.339779 C23.5939227,49.2734807 20.9723757,42.6187845 20.1657459,40.198895 L27.2237569,33.140884 C24.6022099,27.0911602 20.1657459,20.6381215 15.7292818,16 C11.2928177,17.2099448 6.25138122,19.0248619 0,23.058011 C0.806629834,30.1160221 4.63812155,47.8618785 23.1906077,66.2127072 Z" id="Shape"></path>
+            <path d="M64.5,0 C48.825,0 36,9.98241934 36,22.4095128 C36,34.2254377 47.8071429,44.0041342 62.6678571,44.8190256 C62.8714286,48.0785911 62.6678571,51.5418795 62.0571429,54.801445 C61.8535714,56.2275049 63.2785714,57.4498419 64.7035714,56.8386734 C71.0142857,53.7828307 93,38.0961718 93,22.4095128 C93,9.98241934 80.175,0 64.5,0 Z" id="Shape"></path>
+            <path d="M53,22 L77,22" id="Shape" stroke-linejoin="round"></path>
+            <path d="M53,14 L77,14" id="Shape" stroke-linejoin="round"></path>
+            <path d="M53,30 L65,30" id="Shape" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

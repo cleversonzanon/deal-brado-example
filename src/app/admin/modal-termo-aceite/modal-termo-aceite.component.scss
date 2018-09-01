@@ -1,0 +1,57 @@
+@import '../../../variables';
+
+.row-printer {
+  margin-bottom: 24px;
+}
+
+.modal-termo-row-buttons {
+  margin-bottom: 20px;
+}
+
+.modal-termo-content {
+  padding: 0 24px 0 48px;
+  margin-right: 0;
+}
+
+.modal-termo-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* width */
+.modal-termo-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.modal-termo-content::-webkit-scrollbar-track {
+  background: rgba(195, 194, 194, 1.0);
+  border-radius: 7px;
+}
+
+/* Handle */
+.modal-termo-content::-webkit-scrollbar-thumb {
+  background: $brd-secondary-color;
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+.modal-termo-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.modal-termo-checkbox {
+  margin: 10px 0;
+}
+
+.modal-termo-icon-printer {
+  margin-right: 10px;
+}
+
+.modal-termo-button {
+  width: 180px;
+}
+
+.button-aceitar {
+  background-color: $brd-secondary-color;
+  color: white;
+}

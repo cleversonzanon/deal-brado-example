@@ -1,0 +1,44 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO"
+                  [showLogo]="true">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <span class="mat-h1 titulo-reset-senha">
+      {{'admin-modulos.usuarios.confirmar-reset-senha.atencao' | translate}}
+    </span>
+
+    <span class="mat-h4 subtitulo-reset-senha">
+      {{'admin-modulos.usuarios.confirmar-reset-senha.mensagem-reset-senha' | translate: {nome: usuario?.name} }}
+    </span>
+
+    <div class="row-confirmacao-buttons">
+      <button mat-raised-button
+              color="warn"
+              class="btn-modal-reset btn-cancelar"
+              (click)="onClickCancelar()">
+        <strong>
+          {{'admin-modulos.usuarios.confirmar-reset-senha.btn-cancelar' | translate}}
+        </strong>
+      </button>
+
+      <button mat-raised-button
+              color="accent"
+              class="btn-modal-reset"
+              (click)="onClickResetar()">
+        <strong>
+          {{'admin-modulos.usuarios.confirmar-reset-senha.btn-confirmar' | translate}}
+        </strong>
+      </button>
+    </div>
+  </div>
+
+
+</div>

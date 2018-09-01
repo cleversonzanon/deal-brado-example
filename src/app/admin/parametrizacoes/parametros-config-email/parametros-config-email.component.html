@@ -1,0 +1,117 @@
+<div class="config-email-container">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+  
+  <form autocomplete="off"
+        (ngSubmit)="submitParametros()"
+        [formGroup]="emailConfigForm">
+
+
+    <!-- URL SERVIDOR e PORTA -->
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+    <div fxLayout="row"
+         fxLayoutAlign="space-between center"
+         fxFill>
+
+      <mat-form-field fxFlex="45">
+        <!-- SERVIDOR -->
+        <input matInput
+               formControlName="server"
+               [placeholder]="'admin-modulos.parametrizacoes.confg-email.input.servidor' | translate">
+
+        <!-- ERROR -->
+        <mat-error *ngIf="emailConfigForm.get('server').hasError('required')"
+                   align="end">
+          {{'admin-modulos.parametrizacoes.confg-email.input.campo-obrigatorio' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="45">
+        <!-- PORTA -->
+        <input matInput
+               formControlName="port"
+               [placeholder]="'admin-modulos.parametrizacoes.confg-email.input.porta' | translate">
+
+        <!-- ERROR -->
+        <mat-error *ngIf="emailConfigForm.get('port').hasError('required')"
+                   align="end">
+          {{'admin-modulos.parametrizacoes.confg-email.input.campo-obrigatorio' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- USUARIO e SENHA -->
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+    <div fxLayout="row"
+         fxLayoutAlign="space-between center"
+         fxFill>
+
+      <mat-form-field fxFlex="45">
+        <!-- USUARIO -->
+        <input matInput
+               formControlName="username"
+               [placeholder]="'admin-modulos.parametrizacoes.confg-email.input.usuario' | translate">
+
+        <!-- ERROR -->
+        <mat-error *ngIf="emailConfigForm.get('username').hasError('required')"
+                   align="end">
+          {{'admin-modulos.parametrizacoes.confg-email.input.campo-obrigatorio' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="45">
+        <!-- SENHA -->
+        <input matInput
+               formControlName="password"
+               [placeholder]="'admin-modulos.parametrizacoes.confg-email.input.senha' | translate">
+
+        <!-- ERROR -->
+        <mat-error *ngIf="emailConfigForm.get('password').hasError('required')"
+                   align="end">
+          {{'admin-modulos.parametrizacoes.confg-email.input.campo-obrigatorio' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- REMETENTE e TLS-->
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+    <div fxLayout="row"
+         fxLayoutAlign="space-between center"
+         fxFill>
+
+      <mat-form-field fxFlex="45">
+        <!-- REMETENTE -->
+        <input matInput
+               formControlName="sender"
+               [placeholder]="'admin-modulos.parametrizacoes.confg-email.input.remetente' | translate">
+
+        <!-- ERROR -->
+        <mat-error *ngIf="emailConfigForm.get('sender').hasError('required')"
+                   align="end">
+          {{'admin-modulos.parametrizacoes.confg-email.input.campo-obrigatorio' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <!-- TLS -->
+      <mat-checkbox fxFlex="45"
+                    formControlName="tls">
+        {{'admin-modulos.parametrizacoes.confg-email.input.tls' | translate}}
+      </mat-checkbox>
+    </div>
+
+    <div fxLayout="row"
+         fxLayoutAlign="end">
+
+      <button mat-raised-button
+              type="submit"
+              color="accent">
+        <mat-icon>
+          save
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.parametrizacoes.confg-email.btn-salvar' | translate}}
+        </strong>
+      </button>
+    </div>
+  </form>
+</div>

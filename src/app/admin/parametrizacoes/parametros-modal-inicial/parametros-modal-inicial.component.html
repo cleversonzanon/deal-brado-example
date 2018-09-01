@@ -1,0 +1,172 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO"
+                  [showLogo]="false">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography conteudo-modal-parametros"
+     fxLayout="row">
+
+  <div fxFlex="30"
+       fxLayoutAlign="start center"
+       fxLayout="column">
+
+    <img src="../../../../assets/background-imagens/parametrizacao/parametro.png">
+
+    <strong class="label-informativo">
+      {{'admin-modulos.parametrizacoes.modal-inicial.label-informativo' | translate}}
+    </strong>
+  </div>
+
+  <div fxLayout="column" fxFlex="70">
+
+    <div fxLayout="column"
+         fxLayoutAlign="center center"
+         class="row-parametros-titulos">
+      <strong>
+        {{'admin-modulos.parametrizacoes.modal-inicial.titulo' | translate}}
+      </strong>
+      <span>
+          {{'admin-modulos.parametrizacoes.modal-inicial.subtitulo' | translate}}
+        </span>
+    </div>
+
+
+    <mat-accordion class="example-headers-align">
+
+      <!-- TEMPO DE INATIVIDADE -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.TEMPO_INATIVIDADE"
+                           (opened)="setStep(TipoParametrizacao.TEMPO_INATIVIDADE)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.tempo-inatividade' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.tempo-inatividade' | translate}}
+              </span>
+            <mat-icon>schedule</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-inatividade (closePanel)="closeStep()"></app-parametros-inatividade>
+      </mat-expansion-panel>
+
+      <!-- CONFIGURACAO DE EMAIL -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.CONFIGURACAO_EMAIL"
+                           (opened)="setStep(TipoParametrizacao.CONFIGURACAO_EMAIL)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.configuracao-email' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.configuracao-email' | translate}}
+              </span>
+            <mat-icon>mail_outline</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-config-email></app-parametros-config-email>
+      </mat-expansion-panel>
+
+      <!-- IMAGENS DE EMAIL -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.IMAGENS_EMAIL"
+                           (opened)="setStep(TipoParametrizacao.IMAGENS_EMAIL)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.imagens-email' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.imagens-email' | translate}}
+              </span>
+            <mat-icon>web_asset</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-imgs-email></app-parametros-imgs-email>
+      </mat-expansion-panel>
+
+      <!-- TERMO DE USO -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.TERMO_USO"
+                           (opened)="setStep(TipoParametrizacao.TERMO_USO)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.termo-uso' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.termo-uso' | translate}}
+              </span>
+            <mat-icon>class_outline</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-termo-uso></app-parametros-termo-uso>
+      </mat-expansion-panel>
+
+      <!-- TELAS DO SISTEMA -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.TELAS_SISTEMA"
+                           (opened)="setStep(TipoParametrizacao.TELAS_SISTEMA)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.telas-sistema' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.telas-sistema' | translate}}
+              </span>
+            <mat-icon>photo</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-imgs-sistema></app-parametros-imgs-sistema>
+      </mat-expansion-panel>
+
+      <!-- TELAS DO APP -->
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+      <mat-expansion-panel [expanded]="step === TipoParametrizacao.TELAS_APP"
+                           (opened)="setStep(TipoParametrizacao.TELAS_APP)"
+                           hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong class="titulo-tipo-parametro">
+              {{'admin-modulos.parametrizacoes.modal-inicial.titulos.telas-app' | translate}}
+            </strong>
+          </mat-panel-title>
+          <mat-panel-description>
+              <span class="titulo-tipo-informativo">
+                {{'admin-modulos.parametrizacoes.modal-inicial.titulo-informativo.telas-app' | translate}}
+              </span>
+            <mat-icon>phone_android</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-parametros-imgs-app></app-parametros-imgs-app>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+
+</div>

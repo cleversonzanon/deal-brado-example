@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+@import '../../../../styles';
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conteudo-modal-parametros {
+  padding: 24px 74px 72px 24px;
+
+  img {
+    height: 160px;
+  }
+
+  .label-informativo {
+    margin-top: 14px;
+    color: $dark-secondary-text;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.row-parametros-titulos {
+  strong {
+    font-size: 36px;
+    color: mat-color($app-palette-primary);
+    margin-bottom: 28px;
+  }
+
+  span {
+    color: $brd-text-secondary;
+    margin-bottom: 18px;
+  }
+}
+
+.titulo-tipo-parametro {
+  color: mat-color($app-palette-primary);
+}
+
+.titulo-tipo-informativo {
+  font-size: 12px;
+}

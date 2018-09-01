@@ -1,0 +1,19 @@
+@import '../../../../styles';
+
+.usuario-criar-container {
+  border: 1px solid $brd-secondary-color;
+  border-radius: 3px;
+}
+
+.usuario-criar-conteudo {
+  width: 800px;
+  padding: 32px 40px;
+}
+
+button {
+  width: 180px;
+}
+
+.aviso-campos-obrigatorios {
+  color: $dark-secondary-text;
+}

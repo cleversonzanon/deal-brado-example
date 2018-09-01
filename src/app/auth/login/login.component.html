@@ -1,0 +1,122 @@
+<div class="image-back"
+     [@fade]="fadeFlag"
+     [ngStyle]="{'background-image': 'url(' + getUrlImage() + ')'}">
+
+  <!-- Linha superior da aplicação com degrade -->
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+  <div class="degrade-superior"></div>
+
+  <!-- Toolbar da aplicacao inicial -->
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+  <div class="toolbar-transparent">
+
+    <img src="../../../assets/Logotipo-branco-bradomdpi.png" class="brado-logo">
+
+    <span style="flex: 1;"></span>
+
+    <div class="basic-container-login" fxHide.xs id="login-panel">
+      <mat-expansion-panel class="expand-toolbar-transparent" [expanded]="true">
+        <mat-expansion-panel-header class="expand-painel-header">
+          <mat-panel-title class="login-title">
+            <mat-icon svgIcon="brd-login-seta" class="icon-login"></mat-icon>
+            <span [innerHTML]="'home.btn-login' | translate">
+            </span>
+
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <form class="login-container"
+              (ngSubmit)="submitLogin()"
+              [formGroup]="loginForm">
+
+          <span class="span-title-login">
+            {{'home.container-login.titulo' | translate}}
+          </span>
+
+          <mat-form-field appearance="outline"
+                          style="margin-bottom: -1.25em;" id="email-form">
+            <mat-icon matPrefix svgIcon="brd-usuario"></mat-icon>
+            <mat-label>
+              Login
+              <!-- @TODO problema de loading de file de translate (pt-br)-->
+              <!--{{'home.container-login.input-login' | translate}}-->
+            </mat-label>
+            <input matInput
+                   formControlName="email"
+                   type="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"
+                          style="margin-bottom: -1.25em;" id="senha-form">
+            <mat-icon matPrefix svgIcon="brd-cadiado"></mat-icon>
+            <mat-label>
+              Senha
+              <!-- @TODO problema de loading de file de translate (pt-br)-->
+              <!--{{'home.container-login.input-senha' | translate}}-->
+            </mat-label>
+            <input matInput
+                   formControlName="password"
+                   type="password">
+          </mat-form-field>
+
+          <button mat-raised-button
+                  [disabled]="!loginForm.valid"
+                  color="primary"
+                  type="submit"
+                  id="login-btn">
+            {{'home.container-login.btn-acessar' | translate}}
+            <ngx-loading [show]="loading"
+                         [config]="loadingConfig">
+            </ngx-loading>
+          </button>
+        </form>
+
+        <div class="recuperar-senha-container-login">
+          <a href="#"
+             routerLink="/esqueceu-senha">
+            {{'home.container-login.link-esqueceu-senha' | translate}}
+          </a>
+          <span class="credenciais-invalidas-login"
+                *ngIf="loginInvalido">
+            {{'home.container-login.login-invalido' | translate}}
+          </span>
+
+        </div>
+
+      </mat-expansion-panel>
+    </div>
+  </div>
+
+  <!-- Parte interna da pagina (movimentacoes)-->
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+  <div class="container-body">
+    <div class="slider-container">
+      <button mat-icon-button
+              class="slider-button-icon"
+              (click)="onClickAnterior()">
+        <mat-icon aria-label="Imagem anterior"
+                  class="slider-icon"
+                  svgIcon="brd-slider-left">
+        </mat-icon>
+      </button>
+
+
+      <div class="slider-container-atual-position">
+        <span class="actual-step"
+              *ngFor="let imagem of listaImagens; let position = index;"
+              (click)="onClickStepPosition(position)"
+              [class.step-active]="position === stepAtual">
+        </span>
+      </div>
+
+      <button mat-icon-button
+              class="slider-button-icon"
+              (click)="onClickProximo()">
+        <mat-icon aria-label="Próxima imagem"
+                  class="slider-icon"
+                  svgIcon="brd-slider-right">
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

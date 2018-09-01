@@ -1,0 +1,171 @@
+<div class="usuario-criar-container"
+     fxLayout="column">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <div class="usuario-criar-conteudo"
+       fxLayout="column"
+       fxLayoutAlign="center center">
+
+    <form fxLayout="column"
+          fxFill
+          autocomplete="off"
+          (ngSubmit)="submitUsuario()"
+          [formGroup]="usuarioForm">
+
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="45">
+          <input matInput
+                 [placeholder]="'admin-modulos.usuarios.criar-usuario.input.email' | translate"
+                 formControlName="email">
+          <!-- ERRO - email obrigatorio -->
+          <mat-error *ngIf="usuarioForm.get('email').hasError('required')"
+                     [innerHTML]="'admin-modulos.usuarios.criar-usuario.validacoes.email-obrigatorio' | translate"
+                     align="end">
+          </mat-error>
+          <!-- ERRO - email invalido -->
+          <mat-error *ngIf="usuarioForm.get('email').hasError('email')"
+                     [innerHTML]="'admin-modulos.usuarios.criar-usuario.validacoes.email-invalido' | translate"
+                     align="end">
+          </mat-error>
+          <!-- ERRO backend - email ja cadastrado -->
+          <mat-error *ngIf="usuarioForm.get('email').hasError('email-duplicado')"
+                     [innerHTML]="usuarioForm.get('email').getError('email-duplicado').msg"
+                     align="end">
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <input matInput
+                 mask="(00) 000000009"
+                 [placeholder]="'admin-modulos.usuarios.criar-usuario.input.telefone' | translate"
+                 formControlName="phone">
+          <mat-error *ngIf="usuarioForm.get('phone').hasError('minlength')"
+                     [innerHTML]="'admin-modulos.usuarios.criar-usuario.validacoes.telefone-invalido' | translate"
+                     align="end">
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="45">
+          <input matInput
+                 [placeholder]="'admin-modulos.usuarios.criar-usuario.input.nome-usuario' | translate"
+                 formControlName="name">
+          <mat-error *ngIf="usuarioForm.get('name').hasError('required')"
+                     [innerHTML]="'admin-modulos.usuarios.criar-usuario.validacoes.nome-obrigatorio' | translate"
+                     align="end">
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.criar-usuario.input.perfil-autorizacao' | translate"
+                      formControlName="profileId">
+            <mat-option *ngFor="let perfil of perfis"
+                        [value]="perfil.id">
+              {{perfil.name}}
+            </mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="usuarioForm.get('profileId').hasError('required')"
+                     [innerHTML]="'admin-modulos.usuarios.criar-usuario.validacoes.perfil-obrigatorio' | translate"
+                     align="end">
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="45">
+          <mat-select formControlName="terminalIdList"
+                      [placeholder]="'admin-modulos.usuarios.criar-usuario.input.terminais' | translate"
+                      multiple>
+            <mat-option *ngFor="let terminal of terminais"
+                        [value]="terminal.id">
+              {{terminal.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <mat-select formControlName="serviceUnitIdList"
+                      [placeholder]="'admin-modulos.usuarios.criar-usuario.input.unidade-servico' | translate"
+                      multiple>
+            <mat-option *ngFor="let unidade of unidadeServico"
+                        [value]="unidade.id">
+              {{unidade.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.criar-usuario.input.tipo-usuario' | translate"
+                      formControlName="tipoUsuario"
+                      multiple>
+            <mat-option *ngFor="let tipoUsuario of tiposUsuarios"
+                        [value]="tipoUsuario">
+              {{TipoUsuario[tipoUsuario] | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.criar-usuario.input.empresa' | translate"
+                      formControlName="empresa"
+                      multiple>
+            <mat-optgroup *ngFor="let tipoEmpresaGroup of empresas"
+                          [label]="tipoEmpresaGroup.tipoUsuario | translate">
+              <mat-option *ngFor="let empresa of tipoEmpresaGroup.empresaSuggest"
+                          [value]="empresa">
+                {{empresa.name}}
+              </mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Acoes de voltar e proximo -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row"
+           fxFill
+           fxLayoutAlign="space-between center">
+        <button mat-stroked-button
+                color="accent"
+                type="button"
+                (click)="onClickVoltar($event)">
+          <mat-icon>
+            keyboard_arrow_left
+          </mat-icon>
+          <strong>
+            {{'admin-modulos.usuarios.criar-usuario.btn-voltar' | translate}}
+          </strong>
+        </button>
+
+        <button mat-raised-button
+                color="accent"
+                type="submit">
+          <mat-icon>
+            save
+          </mat-icon>
+          <strong>
+            {{'admin-modulos.usuarios.criar-usuario.btn-salvar' | translate}}
+          </strong>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+<div fxLayout="row"
+     fxLayoutAlign="end">
+  <span class="aviso-campos-obrigatorios">
+    {{'admin-modulos.usuarios.criar-usuario.campos-obrigatorios' | translate}}
+  </span>
+</div>

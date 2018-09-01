@@ -1,0 +1,18 @@
+@import '../../../../styles';
+
+.usuario-editar-container-titles {
+
+  .titulo {
+    font-size: 36px;
+    color: mat-color($app-palette-accent);
+  }
+
+  .subtitulo {
+    color: $brd-text-secondary;
+    font-weight: 700;
+  }
+}
+
+.conteudo-edit-container {
+  margin-bottom: 80px;
+}

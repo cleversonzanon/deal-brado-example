@@ -1,0 +1,60 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [showLogo]="!tipoAcaoSelecionado">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <span class="mat-h1 titulo-modal-inicial"
+          [innerHTML]="'admin-modulos.perfis.modal-inicial.titulo-webrado' | translate">
+    </span>
+
+    <span class="mat-h4 subtitulo-modal-inicial">
+      {{'admin-modulos.perfis.modal-inicial.subtitulo' | translate}}
+    </span>
+
+    <div fxLayout="row"
+         class="row-buttons-inicial">
+      <button mat-raised-button
+              class="button-perfil-action btn-criar"
+              (click)="onClickOpcao(TipoAcao.CRIAR_PERFIL)">
+        <mat-icon>
+          supervised_user_circle_outline
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.modal-inicial.btn-criar-perfil' | translate}}
+        </strong>
+      </button>
+
+      <button mat-raised-button
+              class="button-perfil-action btn-editar"
+              (click)="onClickOpcao(TipoAcao.EDITAR_PERFIL)">
+        <mat-icon>
+          perm_contact_calendar_outline
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.modal-inicial.btn-editar-perfil' | translate}}
+        </strong>
+      </button>
+    </div>
+
+    <div style="margin-bottom: 80px;">
+      <div *ngIf="this.tipoAcaoSelecionado"
+           [@slideInOut]>
+
+        <app-perfil-criar-nome *ngIf="tipoAcaoSelecionado === TipoAcao.CRIAR_PERFIL"
+                               (clickVoltar)="onClickFecharOpcao()">
+        </app-perfil-criar-nome>
+        <app-perfil-pesquisar *ngIf="tipoAcaoSelecionado === TipoAcao.EDITAR_PERFIL"
+                              (clickVoltar)="onClickFecharOpcao()">
+        </app-perfil-pesquisar>
+        <app-perfil-erro *ngIf="tipoAcaoSelecionado === TipoAcao.ERRO_PERFIL"
+                         (clickVoltar)="onClickFecharOpcao()">
+        </app-perfil-erro>
+      </div>
+    </div>
+  </div>
+</div>

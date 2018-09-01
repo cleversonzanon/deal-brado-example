@@ -1,0 +1,46 @@
+@import '../../../../styles';
+@import '~@angular/material/theming';
+
+.border-escolher-modulos {
+  border: 1px solid $brd-tertiary-orange;
+  border-radius: 3px;
+  margin: 40px 30px 80px;
+}
+
+.conteudo-escolher-modulos {
+  padding: 30px 24px 24px;
+}
+
+.btn-escolher-modulo {
+  width: 180px;
+}
+
+.row-buttons {
+  margin-top: 40px !important;
+}
+
+.modulo-name {
+  color: $brd-tertiary-orange;
+  font-weight: 700 !important;
+}
+
+.titulo-escolher-modulos {
+  color: $brd-tertiary-orange;
+  font-weight: 700 !important;
+}
+
+.subtitulo-escolher-modulos {
+  color: $brd-text-secondary;
+}
+
+.icone-modulo {
+  font-size: 128px;
+  height: 128px;
+  width: 128px;
+  margin-bottom: 20px;
+}
+
+.alert-message {
+  color: $brd-tertiary-orange;
+  margin-left: 10px;
+}

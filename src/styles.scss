@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+@import 'theme-orange';
+@import 'theme-blue';
+@import 'variables';
+
+// Font da aplicacao
+$custom-typography: mat-typography-config(
+  $font-family: 'Montserrat'
+);
+@include mat-core($custom-typography);
+
+$brd-mt-primary: (
+  100: #dde6f3, // @TODO nao remova essa linha... aplicacao para de compilar
+  500: $brd-primary-color,
+  contrast: (
+    100: $black-87-opacity,
+    500: white,
+  )
+);
+
+$brd-mt-accent: (
+  100: green, // @TODO nao remova essa linha... aplicacao para de compilar
+  500: $brd-secondary-color,
+  contrast: (
+    100: $black-87-opacity,
+    500: white,
+  )
+);
+
+// Paleta de cor Material
+$app-palette-primary: mat-palette($brd-mt-primary, 500);
+$app-palette-accent: mat-palette($brd-mt-accent, 500);
+$app-palette-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-palette-primary, $app-palette-accent, $app-palette-warn);
+
+// Include theme styles for core and each component used in your app.
+@include angular-material-theme($app-theme);
+@include covalent-theme($app-theme);
+
+$secondary-primary: mat-palette($brd-mat-orange-theme, 500);
+$secondary-accent: mat-palette($brd-mat-blue-theme, 500);
+
+.secondary-theme {
+  $secondary-theme: mat-light-theme($secondary-primary, $secondary-accent);
+
+  @include angular-material-theme($secondary-theme);
+}
+
+body {
+  margin: 0;
+}
+
+.input-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}

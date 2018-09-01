@@ -1,0 +1,93 @@
+@import '~@angular/material/theming';
+@import '../../../../styles';
+
+$color-label: rgba(0, 0, 0, 0.54);
+
+.btn-voltar {
+  color: $brd-tertiary-orange;
+  margin-bottom: 40px;
+}
+
+.inf-status {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: mat-color($app-palette-warn);
+}
+
+.inf-status-inativo {
+  background-color: $brd-secondary-color;
+}
+
+.conteudo-modal {
+  margin: 0 0 20px !important; // Rever o fxFill
+}
+
+.container-lista {
+  position: relative;
+  max-height: 560px;
+  overflow: auto;
+}
+
+.container-lista::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* width */
+.container-lista::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.container-lista::-webkit-scrollbar-track {
+  background: rgba(195, 194, 194, 1.0);
+  border-radius: 7px;
+}
+
+/* Handle */
+.container-lista::-webkit-scrollbar-thumb {
+  background: $brd-tertiary-orange;
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+.container-lista::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container-voltar {
+  padding: 0 16px;
+}
+
+.label-total-filtros {
+  width: 175px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.span-max-dot {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden !important;
+  max-width: 120px;
+  padding-right: 24px;
+}
+
+.label-informativo {
+  color: $color-label;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.label-table {
+  color: $color-label;
+}
+
+// Hover na tabela
+.mat-row:hover {
+  background-color: #838383;
+
+  .label-table {
+    color: white;
+  }
+}

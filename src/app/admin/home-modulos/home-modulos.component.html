@@ -1,0 +1,64 @@
+<div class="home-modulos-page mat-typography"
+     [ngStyle]="{'background-image': 'url(' + getUrlImage() + ')'}">
+
+  <!-- Linha superior da aplicação com degrade -->
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+  <!--<div class="home-degrade-superior"></div>-->
+
+  <!-- ROW de modulos e acessos-->
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+  <div fxLayout="row"
+       class="home-modulos-row-opcoes"
+       fxLayoutAlign="center center">
+
+    <div fxFlex="17"
+         class="img-container">
+      <img src="../../../assets/Logotipo-branco-bradomdpi.png" style="width: 80%;">
+    </div>
+
+    <!-- MODULOS -->
+    <div fxFlex="66"
+         fxLayout="row"
+         class="home-modulos-container-opcoes">
+      <div *ngFor="let modulo of opcoesModulos"
+           fxLayoutAlign="center center"
+           class="container-modulo"
+           fxLayout="column">
+        <div class="fundo-icone-modulo">
+          <mat-icon [svgIcon]="modulo.icon"
+                    class="modulo-icone">
+          </mat-icon>
+        </div>
+
+        <span class="mat-h2 text-modulo">{{modulo.titulo | translate}}</span>
+        <span class="mat-h4 text-modulo-desc">{{modulo.descricao | translate}}</span>
+      </div>
+    </div>
+
+    <div fxFlex="17"
+         fxLayout="column">
+      <div class="mat-h1 titulo-funcionalidades">
+        <mat-icon svgIcon="modulo-gears"></mat-icon>
+        <strong style="margin-left: 10px;">Administração Geral</strong>
+      </div>
+
+      <a href="#"
+         class="mat-h2 link-funcionalidade"
+         (click)="onClickAbrirFuncionalidade($event,'modal-perfil-inicial')">
+        {{'admin-modulos.links.cadastro-perfil' | translate}}
+      </a>
+      <a href="#"
+         class="mat-h2 link-funcionalidade"
+         (click)="onClickAbrirFuncionalidade($event, 'modal-usuario-inicial')">
+        {{'admin-modulos.links.cadastro-usuario' | translate}}
+      </a>
+      <a href="#"
+         class="mat-h2 link-funcionalidade"
+         (click)="onClickAbrirFuncionalidade($event, 'modal-parametrizacoes-inicial')">
+        {{'admin-modulos.links.cadastro-parametrizacoes' | translate}}
+      </a>
+    </div>
+  </div>
+</div>
+
+<router-outlet name="modal"></router-outlet>

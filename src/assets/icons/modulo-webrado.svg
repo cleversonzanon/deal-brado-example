@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="89px" viewBox="0 0 89 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-webrado-branco@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Menu-de-Módulos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-webrado-branco" transform="translate(2.000000, 2.000000)" stroke="#FFFFFF" stroke-width="3">
+            <path d="M71,42 C74.5466667,29.4 85,26.7272727 85,15.0818182 C85,6.87272727 78.28,0 71,0 C63.72,0 57,7.06363636 57,15.0818182 C57,26.7272727 67.4533333,29.4 71,42" id="Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14,85 C17.5466667,72.4 28,69.7272727 28,58.0818182 C28,49.8727273 21.28,43 14,43 C6.72,43 0,50.0636364 0,58.0818182 C0,69.7272727 10.4533333,72.4 14,85" id="Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M33,48 L44.3333333,48 C47.5444444,48 50,50.6 50,54 C50,57.4 47.5444444,60 44.3333333,60 L33,60" id="Shape"></path>
+            <path d="M25.875,73 L44.9375,73 C55.421875,73 64,64.5921053 64,54.3157895 C64,44.0394737 55.421875,35.6315789 44.9375,35.6315789 L23.96875,35.6315789 C19.775,35.6315789 16.34375,32.2684211 16.34375,28.1578947 C16.34375,24.0473684 19.775,20.6842105 23.96875,20.6842105 L31.59375,20.6842105 L31.59375,24.4210526 L48.75,13.2105263 L31.59375,2 L31.59375,7.60526316 L23.96875,7.60526316 C12.340625,7.60526316 3,16.7605263 3,28.1578947 C3,32.2684211 4.334375,36.1921053 6.43125,39.3684211" id="Shape"></path>
+        </g>
+    </g>
+</svg>

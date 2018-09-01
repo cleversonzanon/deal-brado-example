@@ -1,0 +1,158 @@
+<div class="usuario-buscar-container"
+     fxLayout="column">
+
+  <ngx-loading [show]="loading">
+  </ngx-loading>
+
+  <div class="conteudo-usuario"
+       fxLayout="column"
+       fxLayoutAlign="center center">
+
+    <form fxLayout="column"
+          fxFill
+          autocomplete="off"
+          (ngSubmit)="submitFiltrar()"
+          fxLayoutAlign="center center"
+          [formGroup]="filtroForm">
+
+      <!-- CAMPO DE AUTOCOMPLETE -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row"
+           fxLayoutAlign="center">
+
+        <mat-form-field appearance="outline"
+                        class="input-autocomplete">
+          <input matInput
+                 class="input-autocomplete"
+                 formControlName="nome"
+                 [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.autocomplete' | translate"
+                 [matAutocomplete]="nomeFiltro">
+
+          <mat-autocomplete #nomeFiltro="matAutocomplete">
+            <mat-option *ngFor="let usuario of usuarioList" [value]="usuario">
+              {{usuario}}
+            </mat-option>
+          </mat-autocomplete>
+
+        </mat-form-field>
+
+        <button mat-raised-button
+                type="submit"
+                class="btn-pesquisar">
+          <mat-icon class="search-icon">search</mat-icon>
+        </button>
+      </div>
+
+      <!-- CAMPOS DE PERFIL E TIPO USUARIO -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.perfil-autorizacao' | translate"
+                      formControlName="perfilAutorizacao"
+                      multiple>
+            <mat-option *ngFor="let perfil of perfis"
+                        [value]="perfil">
+              {{perfil.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.tipo-usuario' | translate"
+                      formControlName="tipoUsuario"
+                      multiple>
+            <mat-option *ngFor="let tipoUsuario of tiposUsuarios"
+                        [value]="tipoUsuario">
+              {{TipoUsuario[tipoUsuario] | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- CAMPOS DE TERMINAIS E STATUS -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="45">
+          <mat-select placeholder="Terminais"
+                      formControlName="terminais"
+                      [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.terminais' | translate"
+                      multiple>
+            <mat-option *ngFor="let terminal of terminais"
+                        [value]="terminal">
+              {{terminal.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- CAMPO DE ATIVO -->
+        <mat-form-field fxFlex="45">
+          <mat-select [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.status' | translate"
+                      formControlName="ativo">
+            <mat-option *ngFor="let status of statusList"
+                        [value]="status.value">
+              {{status.label | translate}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- CAMPO DE UNIDADE DE SERVICO -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-form-field fxFlex="100">
+          <mat-select formControlName="unidadeDeServico"
+                      [placeholder]="'admin-modulos.usuarios.buscar-usuario.input.unidade-servico' | translate"
+                      multiple>
+            <mat-option *ngFor="let unidade of unidadeServico"
+                        [value]="unidade">
+              {{unidade.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Acoes de voltar e proximo -->
+      <!-- --------------------------------------------------------------------------------------------------------- -->
+      <div fxLayout="row"
+           fxFill
+           fxLayoutAlign="space-between center">
+
+        <button mat-stroked-button
+                color="accent"
+                type="button"
+                (click)="onClickVoltar($event)">
+          <mat-icon>
+            keyboard_arrow_left
+          </mat-icon>
+          <strong>
+            {{'admin-modulos.usuarios.buscar-usuario.btn-voltar' | translate}}
+          </strong>
+        </button>
+
+        <div fxLayout="row">
+          <button mat-raised-button
+                  color="accent"
+                  type="submit">
+            <mat-icon>
+              filter_list
+            </mat-icon>
+            <strong>
+              {{'admin-modulos.usuarios.buscar-usuario.btn-filtrar' | translate}}
+            </strong>
+          </button>
+
+          <!--Download Export-->
+          <button type="button"
+                  class="btn-download"
+                  (click)="downloadExport()"
+                  mat-raised-button>
+            <mat-icon class="icon-download">
+              arrow_downward
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

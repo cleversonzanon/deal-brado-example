@@ -1,0 +1,83 @@
+<img src="../../../assets/background-imagens/esqueceu-senha/recuperarsenha-superior.jpg"
+     class="img-top">
+
+<div class="body-recuperar-senha">
+  <div class="recuperar-senha-container mat-typography">
+
+    <!-- Formulario para reset -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <form class="form-container"
+          (submit)="submitRecuperarSenha()"
+          [formGroup]="esqueceuSenhaForm"
+          autocomplete="off"
+          *ngIf="!formSubmited; else confirmacaoMsg">
+
+      <ngx-loading [show]="loading"></ngx-loading>
+
+      <span class="recuperar-senha-titulo mat-display-2">
+        {{'esqueceu-senha.titulo' | translate}}
+      </span>
+
+      <span class="mat-h2 recuperar-senha-subtitulo">
+        {{'esqueceu-senha.texto' | translate}}
+      </span>
+
+      <mat-form-field>
+        <mat-label>
+          {{'esqueceu-senha.input-email-label' | translate}}
+        </mat-label>
+        <input matInput
+               formControlName="email"
+               type="email">
+        <mat-icon matSuffix>
+          mail_outline
+        </mat-icon>
+      </mat-form-field>
+
+      <div class="row-button">
+        <button mat-raised-button
+                [disabled]="!esqueceuSenhaForm.valid"
+                class="button-submit"
+                color="primary"
+                type="submit">
+          <strong>
+            {{'esqueceu-senha.btn-continuar' | translate}}
+          </strong>
+        </button>
+      </div>
+
+      <div class="alert-container email-invalido"
+           *ngIf="emailInvalido">
+        <mat-icon color="warn">
+          error
+        </mat-icon>
+        <span class="alert-text">
+          {{'esqueceu-senha.email-invalido' | translate}}
+        </span>
+      </div>
+    </form>
+
+    <!-- Mensagem de confirmacao -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <ng-template #confirmacaoMsg>
+      <div class="form-container">
+        <span class="recuperar-senha-titulo mat-display-2">
+          {{'esqueceu-senha.titulo-enviado' | translate}}
+        </span>
+
+        <span class="mat-h2 recuperar-senha-subtitulo"
+              [innerHtml]="'esqueceu-senha.texto-enviado' | translate">
+        </span>
+
+        <div class="alert-container">
+          <mat-icon color="warn">
+            info_outline
+          </mat-icon>
+          <span class="alert-text">
+            {{'esqueceu-senha.alerta-span' | translate}}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

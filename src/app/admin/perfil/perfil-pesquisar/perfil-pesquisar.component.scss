@@ -1,0 +1,59 @@
+@import '../../../../styles';
+@import '~@angular/material/theming';
+
+.border-pesquisar-perfil {
+  border: 1px solid $brd-primary-color;
+  border-radius: 3px;
+}
+
+.conteudo-perfil {
+  width: 800px;
+  padding: 60px 40px 40px 40px;
+}
+
+.input-name {
+  color: $brd-tertiary-orange;
+  font-weight: 700;
+}
+
+.msg-error {
+  color: mat-color($app-palette-warn);
+}
+
+.input-nome-perfil {
+  width: 400px;
+}
+
+.texto-aviso {
+  color: $brd-text-secondary;
+  width: 58%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-pesquisar {
+  width: 52px !important;
+  color: white;
+  height: 52px;
+  margin-top: 3px;
+  background-color: $brd-tertiary-orange;
+}
+
+.search-icon {
+  font-size: 24px;
+}
+
+.btn-voltar {
+  width: 180px;
+  color: $brd-tertiary-orange;
+}
+
+.btn-filtrar {
+  width: 180px;
+  color: white;
+  background-color: $brd-tertiary-orange;
+}
+
+.btn-row {
+  margin-top: 25px;
+}

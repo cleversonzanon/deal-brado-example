@@ -1,0 +1,101 @@
+<app-modal-header (closeModal)="onClickClose()"></app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography secondary-theme">
+
+  <ngx-loading [show]="loading"></ngx-loading>
+
+  <mat-tab-group [selectedIndex]="selected.value"
+                 (selectedIndexChange)="selected.setValue($event)"
+                 color="primary"
+                 class="tab-material">
+    <mat-tab *ngFor="let modFunc of moduloFuncionalidade">
+      <ng-template mat-tab-label>
+        <strong>
+          {{modFunc.name}}
+        </strong>
+      </ng-template>
+
+      <!-- CONTEUDO DA TAB -->
+      <div class="container-body">
+
+        <div class="container-funcionalidades"
+             fxLayout="column">
+          <div *ngFor="let funcionalidade of modFunc.functionalityDTOList"
+               class="funcionalidade">
+            <strong class="funcionalidade-name">
+              {{funcionalidade.name}}
+            </strong>
+
+            <div *ngFor="let autorizacao of funcionalidade.authorizationList"
+                 class="secondary-theme">
+              <mat-checkbox color="primary"
+                            [(ngModel)]="autorizacao.activate"
+                            class="checkbox-autorizacao">
+                {{autorizacao.name}}
+              </mat-checkbox>
+
+              <div *ngFor="let autorizacaoDois of autorizacao.authorizationChildrenList"
+                   fxLayout="row">
+                <mat-icon color="primary">
+                  subdirectory_arrow_right
+                </mat-icon>
+
+                <mat-checkbox color="primary"
+                              [(ngModel)]="autorizacaoDois.activate"
+                              class="checkbox-autorizacao">
+                  {{autorizacaoDois.name}}
+                </mat-checkbox>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha final com acoes -->
+        <div fxLayout="row"
+             class="row-button-funcionalidade secondary-theme"
+             fxLayoutAlign="space-between center">
+
+          <button mat-stroked-button
+                  color="primary"
+                  class="btn-funcionalidade"
+                  (click)="onClickVoltar()">
+            <mat-icon>
+              keyboard_arrow_left
+            </mat-icon>
+            <strong>
+              {{'admin-modulos.perfis.funcionalidades.btn.voltar' | translate}}
+            </strong>
+          </button>
+
+          <a href="#"
+             (click)="onClickConsultar($event)">
+            {{'admin-modulos.perfis.funcionalidades.btn.consultar' | translate}}
+          </a>
+          <a href="#"
+             (click)="onClickMarcarTudo($event)">
+            {{'admin-modulos.perfis.funcionalidades.btn.marcar-tudo' | translate}}
+          </a>
+          <a href="#"
+             (click)="onClickDesmarcarTudo($event)">
+            {{'admin-modulos.perfis.funcionalidades.btn.desmarcar-tudo' | translate}}
+          </a>
+
+          <button mat-raised-button
+                  (click)="onClickAvancar()"
+                  color="primary"
+                  class="btn-funcionalidade">
+            <strong>
+              {{'admin-modulos.perfis.funcionalidades.btn.salvar' | translate}}
+            </strong>
+            <mat-icon>
+              keyboard_arrow_right
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

@@ -1,0 +1,97 @@
+<app-modal-header (closeModal)="onClickClose()"
+                  [tipoHeaderModal]="ModalType.HEADER_USUARIO"
+                  [showLogo]="!tipoAcaoSelecionada ||
+                  (tipoAcaoSelecionada === TipoAcaoUsuario.USUARIO_CRIADO_COM_SUCESSO
+                  || tipoAcaoSelecionada === TipoAcaoUsuario.USUARIO_EDITADO_COM_SUCESSO)">
+</app-modal-header>
+
+<div mat-dialog-content
+     class="mat-typography">
+
+  <div fxLayoutAlign="center center"
+       fxLayout="column">
+
+    <div fxLayoutAlign="center center"
+         fxLayout="column"
+         [ngSwitch]="tipoAcaoSelecionada">
+
+      <!-- HEADER PARA USUARIO ADICIONADO COM SUCESSO -->
+      <ng-container *ngSwitchCase="TipoAcaoUsuario.USUARIO_CRIADO_COM_SUCESSO">
+        <span class="mat-h1 titulo-modal-inicial"
+              [innerHTML]="'admin-modulos.usuarios.modal-inicial.titulo-webrado-sucesso' | translate">
+        </span>
+
+        <span class="mat-h4 subtitulo-modal-inicial">
+          {{'admin-modulos.usuarios.modal-inicial.subtitulo-novo-cadastro' | translate: { nome: nomeUsuario} }}
+        </span>
+      </ng-container>
+
+      <!-- HEADER PARA USUARIO EDITADO COM SUCESSO -->
+      <ng-container *ngSwitchCase="TipoAcaoUsuario.USUARIO_EDITADO_COM_SUCESSO">
+        <span class="mat-h1 titulo-modal-inicial"
+              [innerHTML]="'admin-modulos.usuarios.modal-inicial.titulo-webrado-sucesso' | translate">
+        </span>
+
+        <span class="mat-h4 subtitulo-modal-inicial">
+          {{'admin-modulos.usuarios.modal-inicial.subtitulo-cadastro-editado' | translate: { nome: nomeUsuario} }}
+        </span>
+      </ng-container>
+
+      <!-- HEADER DEFAULT -->
+      <ng-container *ngSwitchDefault>
+        <span class="mat-h1 titulo-modal-inicial"
+              [innerHTML]="'admin-modulos.usuarios.modal-inicial.titulo-webrado' | translate">
+        </span>
+
+        <span class="mat-h4 subtitulo-modal-inicial">
+          {{'admin-modulos.usuarios.modal-inicial.subtitulo' | translate}}
+        </span>
+      </ng-container>
+    </div>
+
+    <div fxLayout="row"
+         class="row-buttons-inicial">
+      <button mat-raised-button
+              color="accent"
+              class="button-usuario-action btn-criar"
+              (click)="onClickOpcao(TipoAcaoUsuario.CRIAR_USUARIO)">
+        <mat-icon>
+          account_circle_outline
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.usuarios.modal-inicial.btn-criar-usuario' | translate}}
+        </strong>
+      </button>
+
+      <button mat-raised-button
+              class="button-usuario-action btn-editar"
+              (click)="onClickOpcao(TipoAcaoUsuario.EDITAR_USUARIO)">
+        <mat-icon>
+          filter_list
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.usuarios.modal-inicial.btn-editar-usuario' | translate}}
+        </strong>
+      </button>
+    </div>
+
+    <div style="margin-bottom: 80px;">
+      <div *ngIf="this.tipoAcaoSelecionada"
+           [@slideInOut]>
+
+        <app-usuario-criar *ngIf="tipoAcaoSelecionada === TipoAcaoUsuario.CRIAR_USUARIO"
+                           (clickVoltar)="onClickFecharOpcao()">
+        </app-usuario-criar>
+
+        <app-usuario-buscar *ngIf="tipoAcaoSelecionada === TipoAcaoUsuario.EDITAR_USUARIO"
+                            (clickVoltar)="onClickFecharOpcao()">
+        </app-usuario-buscar>
+
+        <app-usuario-erro *ngIf="tipoAcaoSelecionada === TipoAcaoUsuario.ERRO_USUARIO"
+                          (clickVoltar)="onClickFecharOpcao()">
+        </app-usuario-erro>
+      </div>
+    </div>
+  </div>
+
+</div>

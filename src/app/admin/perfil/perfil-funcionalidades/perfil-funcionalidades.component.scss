@@ -1,0 +1,54 @@
+@import '../../../../styles';
+
+.row-button-funcionalidade {
+  padding: 24px;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: $dark-secondary-text;
+  }
+
+  a:hover {
+    color: $brd-tertiary-orange;
+  }
+}
+
+.btn-funcionalidade {
+  width: 180px;
+}
+
+.container-funcionalidades {
+  flex-wrap: wrap;
+  height: 460px;
+  padding: 24px;
+  overflow: auto;
+}
+
+.funcionalidade {
+  padding: 0 14px 14px 0;
+  //width: 400px; @TODO
+}
+
+.container-body {
+  border: 1px solid $brd-tertiary-orange;
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+
+.funcionalidade-name {
+  color: $brd-tertiary-orange;
+  //font-size: 12px;
+}
+
+.checkbox-autorizacao {
+  //font-size: 12px;
+  //  white-space: normal !important;
+}
+
+::ng-deep .tab-material > .mat-tab-header {
+  border: none;
+  padding: 0 20px;
+}
+
+

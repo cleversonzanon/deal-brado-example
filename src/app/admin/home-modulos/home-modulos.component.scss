@@ -1,0 +1,111 @@
+@import '../../../../node_modules/compass-mixins/lib/compass/css3';
+@import '../../../styles';
+
+::ng-deep .modal-termo-border > .mat-dialog-container {
+  border-radius: 20px;
+}
+
+::ng-deep .modal-perfil-border > .mat-dialog-container {
+  border-radius: 8px;
+  padding: 0;
+
+  box-shadow: 2px 2px 28px 0 rgba(185, 185, 185, 0.50);
+
+  .mat-dialog-content {
+    margin: 0;
+  }
+}
+
+.home-modulos-page {
+  height: 100vh;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.home-modulos-row-opcoes {
+  padding: 160px 80px;
+}
+
+.modulo-icone {
+  height: 78px;
+  width: 78px;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.fundo-icone-modulo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $brd-primary-color; // Old browsers
+  @include filter-gradient($brd-primary-color, $brd-secondary-color, horizontal); // IE6-9
+  @include background-image(linear-gradient(to bottom, $brd-primary-color 0%, $brd-secondary-color 100%));
+}
+
+.home-modulos-container-opcoes {
+  padding: 0 50px;
+  margin: 0 50px;
+  color: white;
+  position: relative;
+}
+
+.home-modulos-container-opcoes:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  border-left: solid 2px #a2a0a1;
+  height: 50%;
+  transform: translateY(50%);
+}
+
+.home-modulos-container-opcoes:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  border-right: solid 2px #a2a0a1;
+  height: 50%;
+  transform: translateY(50%);
+}
+
+.text-modulo {
+  margin: 10px 0 0 0;
+  font-weight: 700;
+}
+
+.container-modulo {
+  padding: 16px;
+}
+
+.text-modulo-desc {
+  text-align: center;
+}
+
+.home-degrade-superior {
+  height: 72px;
+  background-color: $brd-primary-color; // Old browsers
+  @include filter-gradient($brd-primary-color, $brd-secondary-color, horizontal); // IE6-9
+  @include background-image(linear-gradient(to right, $brd-primary-color 0%, $brd-secondary-color 100%));
+}
+
+.titulo-funcionalidades {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.link-funcionalidade {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.link-funcionalidade:hover {
+  color: $brd-secondary-color;
+}

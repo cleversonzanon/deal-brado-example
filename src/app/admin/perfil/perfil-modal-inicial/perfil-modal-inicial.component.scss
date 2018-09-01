@@ -1,0 +1,62 @@
+@import '../../../../styles';
+
+$btn-height: 50px;
+$btn-width: 320px;
+$btn-ribbon-size: 15px;
+
+.titulo-modal-inicial {
+  font-size: 36px;
+  color: $brd-tertiary-orange;
+}
+
+.subtitulo-modal-inicial {
+  color: $brd-text-secondary;
+  font-weight: 700;
+}
+
+.button-perfil-action {
+  width: $btn-width;
+  color: white;
+  height: $btn-height;
+}
+
+.button-perfil-action:before {
+  content: '';
+  position: absolute;
+  bottom: -$btn-ribbon-size;
+  left: $btn-width/2;
+  transform: translateX(-$btn-ribbon-size);
+  border-right: $btn-ribbon-size solid transparent;
+  border-left: $btn-ribbon-size solid transparent;
+}
+
+// BOTAO DE CRIAR
+.btn-criar {
+  margin-right: 20px;
+  background-color: $brd-tertiary-orange;
+}
+
+.btn-criar:before {
+  border-top: $btn-ribbon-size solid $brd-tertiary-orange;
+}
+
+.btn-criar:disabled:before {
+  border-top: $btn-ribbon-size solid #E0E0E0;
+}
+
+// BOTAO DE EDICAO
+.btn-editar {
+  background-color: $brd-primary-color;
+}
+
+.btn-editar:before {
+  border-top: $btn-ribbon-size solid $brd-primary-color;
+}
+
+.btn-editar:disabled:before {
+  border-top: $btn-ribbon-size solid #E0E0E0;
+}
+
+.row-buttons-inicial {
+  margin-bottom: 40px;
+}

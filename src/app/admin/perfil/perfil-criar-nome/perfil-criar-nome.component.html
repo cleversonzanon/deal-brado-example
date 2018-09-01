@@ -1,0 +1,58 @@
+<div class="border-perfil-criar-nome"
+     fxLayout="column">
+
+  <ngx-loading [show]="submitLoading">
+  </ngx-loading>
+
+  <div class="conteudo-perfil"
+       fxLayout="column"
+       fxLayoutAlign="center center">
+
+    <form fxLayout="row"
+          autocomplete="off"
+          (ngSubmit)="submitPerfil()"
+          [formGroup]="perfilForm"
+          fxLayoutAlign="center center">
+
+      <mat-form-field appearance="outline"
+                      class="input-nome-perfil">
+        <input matInput
+               class="input-name"
+               formControlName="name"
+               [placeholder]="'admin-modulos.perfis.criar-perfil-nome.input-placeholder' | translate">
+        <mat-hint *ngIf="errorForm"
+                  class="msg-error">
+          <strong>{{errorForm}}</strong>
+        </mat-hint>
+      </mat-form-field>
+
+      <button mat-raised-button
+              type="submit"
+              [disabled]="perfilForm.invalid"
+              class="btn-avancar">
+        <strong>
+          {{'admin-modulos.perfis.criar-perfil-nome.btn-avancar' | translate}}
+        </strong>
+      </button>
+    </form>
+
+    <span class="mat-h4 texto-aviso">
+      {{'admin-modulos.perfis.criar-perfil-nome.msg-ajuda' | translate}}
+    </span>
+
+    <div class="row-btn-voltar">
+      <button mat-stroked-button
+              class="btn-voltar"
+              (click)="onClickVoltar($event)">
+        <mat-icon>
+          keyboard_arrow_left
+        </mat-icon>
+        <strong>
+          {{'admin-modulos.perfis.criar-perfil-nome.btn-voltar' | translate}}
+        </strong>
+      </button>
+    </div>
+
+  </div>
+
+</div>
